@@ -15,11 +15,6 @@
     };
   };
 
-  programs.firefox = {
-    enable = true;
-    preferences = { "widget.use-xdg-desktop-portal.file-picker" = 1; };
-  };
-
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [ xdg-desktop-portal-wlr xdg-desktop-portal-gtk ];

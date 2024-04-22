@@ -1,4 +1,5 @@
 { ... }: {
+programs.helix.settings.editor = {
   mouse = false;
   auto-save = true;
   color-modes = true;
@@ -14,4 +15,5 @@
       select = "Select";
     };
   };
+};
 }

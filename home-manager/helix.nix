@@ -13,13 +13,8 @@ in {
     enable = true;
     defaultEditor = true;
     package = unstable.helix;
-    settings = {
-      theme = "catppuccin_simplified";
-      editor.imports = [ ./helix/settings.nix ];
-      keys.imports = [ ./helix/keybinds.nix ];
-
-    };
-    languages.imports = [ ./helix/languages.nix ];
-    themes.catppuccin_simplified.imports = [ ./helix/theme.nix ];
+    settings.theme = "catppuccin_simplified";
   };
+  imports = [ ./helix/theme.nix ./helix/settings.nix ./helix/keybinds.nix ./helix/languages.nix];
+
 }

@@ -9,6 +9,7 @@
     ./home-manager.nix
     ./system.nix
     ./packages.nix
+    ./firefox.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

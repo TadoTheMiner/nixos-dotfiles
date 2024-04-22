@@ -1,4 +1,5 @@
 { ... }: {
+programs.helix.settings.keys = {
   normal = {
     "C-A-q" = [ ":qa!" ];
     "C-s" = [ ":w" ];
@@ -8,5 +9,5 @@
     "C-A-q" = [ ":qa!" ];
     "C-s" = [ ":w" ];
   };
-
+};
 }

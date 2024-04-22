@@ -1,4 +1,5 @@
 { pkgs, ... }: {
+programs.helix.languages = {
   language = [
     {
       name = "nix";
@@ -19,4 +20,5 @@
     }
   ];
   language-server.rust-analyzer.config.check.command = "clippy";
+};
 }

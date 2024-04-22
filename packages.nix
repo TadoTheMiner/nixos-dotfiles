@@ -1,5 +1,8 @@
 { pkgs, ... }:
-let sddm-theme = pkgs.libsForQt5.callPackage ./sddm-theme.nix { };
+let
+  sddm-theme = pkgs.libsForQt5.callPackage ./packages/sddm-theme.nix { };
+  bing-wallpaper-server =
+    pkgs.callPackage ./packages/bing-wallpaper-server.nix { };
 in {
   nixpkgs.config = {
     allowUnfree = true;
@@ -17,6 +20,7 @@ in {
     sddm-theme
     gh
     obsidian
+    bing-wallpaper-server
   ];
   programs.fish.enable = true;
 }
