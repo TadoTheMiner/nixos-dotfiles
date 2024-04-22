@@ -1,10 +1,12 @@
 { pkgs, ... }:
 let sddm-theme = pkgs.libsForQt5.callPackage ./sddm-theme.nix { };
 in {
-  nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [
+      "electron-25.9.0" # for obsidian
+    ];
+  };
   environment.systemPackages = with pkgs; [
     wget
     unzip
@@ -14,6 +16,8 @@ in {
     grc
     sddm-theme
     atuin
+    gh
+    obsidian
   ];
   programs.fish.enable = true;
 }

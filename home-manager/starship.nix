@@ -1,10 +1,5 @@
-{ pkgs, ... }:
-let
-  home-manager = builtins.fetchTarball
-    "https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz";
-in {
-  imports = [ (import "${home-manager}/nixos") ];
-  home-manager.users.tadeas.programs.starship = {
+{ pkgs, ... }: {
+  home-manager.programs.starship = {
     enable = true;
     settings = {
       add_newline = false;
@@ -14,7 +9,6 @@ in {
       right_format = "$time$cmd_duration";
       nix_shell = {
         symbol = "";
-        format = "[$symbol$name]($style) ";
         style = "bold lavender";
       };
       sudo = {

@@ -1,15 +1,11 @@
 { pkgs, ... }:
 let
-  home-manager = builtins.fetchTarball
-    "https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz";
   unstable = import <nixpkgs-unstable> {
     inherit (pkgs) system;
     # another config, etc. if needed
   };
 in {
-  imports = [ (import "${home-manager}/nixos") ];
-
-  home-manager.users.tadeas = {
+  home-manager = {
     xdg.configFile."helix/ignore".source = ./helix-ignore;
     programs.helix = {
       enable = true;

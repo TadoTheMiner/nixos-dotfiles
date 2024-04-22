@@ -14,6 +14,7 @@
       subpixel.rgba = "rgb";
     };
   };
+
   programs.firefox = {
     enable = true;
     preferences = { "widget.use-xdg-desktop-portal.file-picker" = 1; };
@@ -27,17 +28,12 @@
   programs.dconf.enable = true;
   services.xserver = {
     enable = true;
-
+    excludePackages = [ pkgs.xterm ];
     displayManager.sddm = {
       enable = true;
       theme = "sddm-theme";
     };
     desktopManager.plasma5.enable = true;
-  };
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
   };
 
 }

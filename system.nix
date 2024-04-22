@@ -1,4 +1,6 @@
-{ pkgs, lib, ... }: {
+{ ... }:
+let path = "/run/current-system/sw/bin/";
+in {
   services.printing.enable = false;
   boot = {
     kernelParams = [ "quiet" ];
@@ -39,24 +41,20 @@
     extraRules = [{
       commands = [
         {
-          command = "${pkgs.systemd}/bin/systemctl suspend";
+          command = "${path}/nixos-rebuild";
           options = [ "NOPASSWD" ];
         }
         {
-          command = "${pkgs.systemd}/bin/reboot";
+          command = "${path}/systemctl";
           options = [ "NOPASSWD" ];
         }
         {
-          command = "${pkgs.systemd}/bin/poweroff";
+          command = "${path}/nix-channel";
           options = [ "NOPASSWD" ];
         }
       ];
       groups = [ "wheel" ];
     }];
-    extraConfig = with pkgs; ''
-      Defaults:picloud secure_path="${
-        lib.makeBinPath [ systemd ]
-      }:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin"
-    '';
   };
+
 }

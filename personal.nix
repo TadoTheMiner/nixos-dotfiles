@@ -28,7 +28,7 @@ in {
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.fish;
   };
-  home-manager.users.tadeas.programs.git = {
+  home-manager.programs.git = {
     userName = "Tadeas Uradnik";
     userEmail = "taduradnik@gmail.com";
   };

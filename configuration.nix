@@ -6,7 +6,6 @@
   imports = [
     ./hardware-configuration.nix
     ./desktop.nix
-    ./personal.nix
     ./home-manager.nix
     ./system.nix
     ./packages.nix
