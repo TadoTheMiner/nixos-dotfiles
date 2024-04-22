@@ -15,7 +15,6 @@ in {
     nixfmt
     grc
     sddm-theme
-    atuin
     gh
     obsidian
   ];

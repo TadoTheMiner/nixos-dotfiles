@@ -7,23 +7,20 @@ let
     hash = "sha256-Dc/zdxfzAUM5NX8PxzfljRbYvO9f9syuLO8yBr+R3qg=";
   };
 in {
-  home-manager = {
-    xdg.configFile."fish/themes/Catppuccin Mocha.theme".source =
-      "${catppuccin-fish}/themes/Catppuccin Mocha.theme";
+  xdg.configFile."fish/themes/Catppuccin Mocha.theme".source =
+    "${catppuccin-fish}/themes/Catppuccin Mocha.theme";
 
-    programs.fish = {
-      enable = true;
-      interactiveShellInit = ''
-        set fish_greeting
-        atuin init fish | source
-      '';
-      plugins = [
-        # Enable a plugin (here grc for colorized command output) from nixpkgs
-        {
-          name = "grc";
-          src = pkgs.fishPlugins.grc.src;
-        }
-      ];
-    };
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      set fish_greeting
+    '';
+    plugins = [
+      # Enable a plugin (here grc for colorized command output) from nixpkgs
+      {
+        name = "grc";
+        src = pkgs.fishPlugins.grc.src;
+      }
+    ];
   };
 }

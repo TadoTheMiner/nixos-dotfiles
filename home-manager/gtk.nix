@@ -1,12 +1,13 @@
 { pkgs, ... }: {
-  home-manager.gtk = {
+  gtk = {
     enable = true;
     theme = {
-      name = "Catppuccin-Mocha-Standard-Lavender-Dark";
+      name = "Catppuccin-Mocha-Standard-Peach-Dark";
       package = pkgs.catppuccin-gtk.override {
-        accents = [ "pink" ];
-        variant = "macchiato";
+        accents = [ "peach" ];
+        variant = "mocha";
       };
     };
+    iconTheme.name = "breeze-dark";
   };
 }

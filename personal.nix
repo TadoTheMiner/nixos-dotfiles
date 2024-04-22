@@ -1,9 +1,4 @@
-{ pkgs, ... }:
-let
-  home-manager = builtins.fetchTarball
-    "https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz";
-in {
-  imports = [ (import "${home-manager}/nixos") ];
+{ pkgs, ... }: {
   # Set your time zone.
   time.timeZone = "Europe/Bratislava";
 
@@ -28,7 +23,7 @@ in {
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.fish;
   };
-  home-manager.programs.git = {
+  home-manager.users.tadeas.programs.git = {
     userName = "Tadeas Uradnik";
     userEmail = "taduradnik@gmail.com";
   };
