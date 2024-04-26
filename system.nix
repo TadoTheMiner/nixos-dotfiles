@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 let path = "/run/current-system/sw/bin/";
 in {
   services.printing.enable = false;
@@ -12,6 +12,8 @@ in {
       efi.canTouchEfiVariables = true;
       timeout = 1;
     };
+    kernel.sysctl."kernel.sysrq" = "1";
+
   };
 
   networking = {
@@ -36,20 +38,17 @@ in {
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
+
   security.sudo = {
     enable = true;
     extraRules = [{
       commands = [
         {
-          command = "${path}/nixos-rebuild";
+          command = "${path}systemctl";
           options = [ "NOPASSWD" ];
         }
         {
-          command = "${path}/systemctl";
-          options = [ "NOPASSWD" ];
-        }
-        {
-          command = "${path}/nix-channel";
+          command = "${path}nix*";
           options = [ "NOPASSWD" ];
         }
       ];
@@ -57,4 +56,12 @@ in {
     }];
   };
 
+  systemd.services.bing-wallpaper-server = {
+    script = "${
+        pkgs.callPackage ./packages/bing-wallpaper-server.nix { }
+      }/bin/bing-wallpaper-server 10000 /tmp/image.jpg";
+    wantedBy = [ "multi-user.target" ];
+    enable = true;
+    wants = [ "network-online.target" ];
+  };
 }

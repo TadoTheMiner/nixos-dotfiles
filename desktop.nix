@@ -23,10 +23,19 @@
   programs.dconf.enable = true;
   services.xserver = {
     enable = true;
+
+    # Bloatware
     excludePackages = [ pkgs.xterm ];
-    displayManager.sddm = {
-      enable = true;
-      theme = "sddm-theme";
+
+    displayManager = {
+      defaultSession = "plasmawayland";
+      sddm = {
+        enable = true;
+        theme = "sddm-theme";
+        settings = {
+          Theme = { CursorTheme = "Catppuccin-Mocha-Dark-Cursors"; };
+        };
+      };
     };
     desktopManager.plasma5.enable = true;
   };

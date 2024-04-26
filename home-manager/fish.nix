@@ -1,26 +1,42 @@
-{ pkgs, ... }:
-let
-  catppuccin-fish = pkgs.fetchFromGitHub {
-    owner = "catppuccin";
-    repo = "fish";
-    rev = "0ce27b518e8ead555dec34dd8be3df5bd75cff8e";
-    hash = "sha256-Dc/zdxfzAUM5NX8PxzfljRbYvO9f9syuLO8yBr+R3qg=";
-  };
-in {
-  xdg.configFile."fish/themes/Catppuccin Mocha.theme".source =
-    "${catppuccin-fish}/themes/Catppuccin Mocha.theme";
+{ pkgs, ... }: {
+  programs = {
+    fish = {
+      enable = true;
+      interactiveShellInit = ''
+        set fish_greeting
+      '';
+      plugins = [
+        # Enable a plugin (here grc for colorized command output) from nixpkgs
+        {
+          name = "grc";
+          src = pkgs.fishPlugins.grc.src;
+        }
+      ];
+      shellAliases = {
+        # Coreutils
+        ls = "eza -a";
+        ll = "eza -al --grid";
+        cat = "bat";
+        ln = "ln -s";
+        rm = "rm -rI";
+        rmf = "rm -rf";
+        mdr = "mkdir -p";
+        cp = "cp -r";
+        cd = ''echo "use z"'';
+        # Git
+        g = "git";
+        gc = "git stage .; cz commit";
+        gcs = "git stage .; cz commit -- -S";
+        gup = ''git stage .; git commit -m "update"; git push'';
+        gpu = "git push";
+        gpl = "git pull";
 
-  programs.fish = {
-    enable = true;
-    interactiveShellInit = ''
-      set fish_greeting
-    '';
-    plugins = [
-      # Enable a plugin (here grc for colorized command output) from nixpkgs
-      {
-        name = "grc";
-        src = pkgs.fishPlugins.grc.src;
-      }
-    ];
+        # Nix
+        nrb = "sudo nixos-rebuild switch";
+        ndv = "nix develop --command fish";
+        nsh = "nix-shell --command fish -p";
+      };
+    };
+    zoxide.enable = true;
   };
 }

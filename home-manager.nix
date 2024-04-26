@@ -8,11 +8,15 @@ in {
     home.stateVersion = "23.11";
     imports = [
       ./home-manager/atuin.nix
+      ./home-manager/bat.nix
+      ./home-manager/eza.nix
       ./home-manager/fish.nix
       ./home-manager/git.nix
       ./home-manager/gtk.nix
       ./home-manager/helix.nix
+      ./home-manager/ripgrep.nix
       ./home-manager/starship.nix
+      ./home-manager/xdg.nix
     ];
   };
 }

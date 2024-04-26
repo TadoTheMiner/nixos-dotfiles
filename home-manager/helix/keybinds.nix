@@ -1,13 +1,18 @@
 { ... }: {
-programs.helix.settings.keys = {
-  normal = {
-    "C-A-q" = [ ":qa!" ];
-    "C-s" = [ ":w" ];
+  programs.helix.settings.keys = {
+    normal = {
+      C-A-q = ":qa!";
+      C-q = ":x";
+      C-right = "move_next_word_start";
+      C-left = "move_prev_word_end";
+    };
+    insert = {
+      esc = [ "normal_mode" ":w" ];
+      C-A-q = ":qa!";
+      C-q = ":x";
+      C-right = "move_next_word_start";
+      C-left = "move_prev_word_end";
+
+    };
   };
-  insert = {
-    "esc" = [ "normal_mode" ":w" ];
-    "C-A-q" = [ ":qa!" ];
-    "C-s" = [ ":w" ];
-  };
-};
 }
