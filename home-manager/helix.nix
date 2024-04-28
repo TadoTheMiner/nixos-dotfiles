@@ -7,6 +7,7 @@ let
 in {
   xdg.configFile."helix/ignore".text = ''
     Cargo.lock
+    flake.lock
     !.gitignore
     !personal.nix'';
   programs.helix = {
@@ -15,6 +16,11 @@ in {
     package = unstable.helix;
     settings.theme = "catppuccin_simplified";
   };
-  imports = [ ./helix/theme.nix ./helix/settings.nix ./helix/keybinds.nix ./helix/languages.nix];
+  imports = [
+    ./helix/theme.nix
+    ./helix/settings.nix
+    ./helix/keybinds.nix
+    ./helix/languages.nix
+  ];
 
 }

@@ -15,7 +15,6 @@ in {
     ];
   };
   environment.systemPackages = with pkgs; [
-    wget
     unzip
     wl-clipboard
     nil
@@ -28,8 +27,10 @@ in {
     bing-wallpaper-server
     wiki-tui
     newsflash
+    prismlauncher
   ];
   programs = {
+    steam.enable = true;
     fish.enable = true;
     fzf = {
       fuzzyCompletion = true;
@@ -37,5 +38,4 @@ in {
     };
   };
   nixpkgs.overlays = [ (import rust-overlay) ];
-
 }

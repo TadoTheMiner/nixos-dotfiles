@@ -55,7 +55,6 @@ in {
       groups = [ "wheel" ];
     }];
   };
-
   systemd.services.bing-wallpaper-server = {
     script = "${
         pkgs.callPackage ./packages/bing-wallpaper-server.nix { }

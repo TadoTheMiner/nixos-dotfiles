@@ -32,7 +32,8 @@
       bg = "mantle";
       modifiers = [ "bold" ];
     };
-    "ui.linenr" = { fg = "overlay2"; };
+    "ui.linenr".fg = "overlay2";
+    "comment".fg = "overlay2";
     "punctuation" = "peach";
     "ui.menu" = {
       fg = "text";
@@ -55,7 +56,7 @@
         style = "line";
       };
     };
-    "ui.bufferline.background" = { bg = "mantle"; };
+    "ui.bufferline.background".bg = "mantle";
     "ui.text.inactive" = {
       fg = "text";
       bg = "mantle";

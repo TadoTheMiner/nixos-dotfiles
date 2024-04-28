@@ -1,4 +1,6 @@
 { pkgs, ... }: {
+  xdg.configFile."fish/themes/catppuccin_custom.theme".source =
+    ./fish/catppuccin_custom;
   programs = {
     fish = {
       enable = true;
@@ -14,15 +16,13 @@
       ];
       shellAliases = {
         # Coreutils
-        ls = "eza -a";
-        ll = "eza -al --grid";
-        cat = "bat";
+        ls = "eza -al --no-user --no-permissions";
         ln = "ln -s";
         rm = "rm -rI";
         rmf = "rm -rf";
         mdr = "mkdir -p";
         cp = "cp -r";
-        cd = ''echo "use z"'';
+        cd = "z";
         # Git
         g = "git";
         gc = "git stage .; cz commit";
@@ -30,6 +30,7 @@
         gup = ''git stage .; git commit -m "update"; git push'';
         gpu = "git push";
         gpl = "git pull";
+        gfe = "git fetch";
 
         # Nix
         nrb = "sudo nixos-rebuild switch";

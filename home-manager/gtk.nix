@@ -8,6 +8,7 @@
         variant = "mocha";
       };
     };
+    gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
     iconTheme.name = "breeze-dark";
     font = {
       size = 22;
