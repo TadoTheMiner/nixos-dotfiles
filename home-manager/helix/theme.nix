@@ -1,14 +1,14 @@
 { ... }: {
   programs.helix.themes.catppuccin_simplified = {
-    "inherits" = "catppuccin_mocha";
+    inherits = "catppuccin_mocha";
     "ui.background" = { };
     "ui.popup" = {
       fg = "text";
-      bg = "mantle";
+      bg = "crust";
     };
     "ui.help" = {
       fg = "text";
-      bg = "mantle";
+      bg = "crust";
     };
     "ui.statusline" = {
       fg = "text";
@@ -17,49 +17,50 @@
     };
     "ui.statusline.inactive" = {
       fg = "text";
-      bg = "mantle";
+      bg = "crust";
     };
     "ui.selection" = {
-      bg = "mantle";
+      bg = "crust";
       modifiers = [ "bold" ];
     };
     "ui.text.focus" = {
       fg = "peach";
-      bg = "mantle";
+      bg = "crust";
       modifiers = [ "bold" ];
     };
     "ui.highlight" = {
-      bg = "mantle";
+      bg = "crust";
       modifiers = [ "bold" ];
     };
     "ui.linenr".fg = "overlay2";
+    "ui.linenr.selected".fg = "peach";
     "comment".fg = "overlay2";
     "punctuation" = "peach";
     "ui.menu" = {
       fg = "text";
-      bg = "mantle";
+      bg = "crust";
     };
     "ui.menu.selected" = {
       fg = "peach";
-      bg = "mantle";
+      bg = "crust";
       modifiers = [ "bold" ];
     };
     "ui.bufferline" = {
       fg = "subtext0";
-      bg = "mantle";
+      bg = "crust";
     };
     "ui.bufferline.active" = {
       fg = "mauve";
-      bg = "mantle";
+      bg = "crust";
       underline = {
         color = "mauve";
         style = "line";
       };
     };
-    "ui.bufferline.background".bg = "mantle";
+    "ui.bufferline.background".bg = "crust";
     "ui.text.inactive" = {
       fg = "text";
-      bg = "mantle";
+      bg = "crust";
     };
   };
 }

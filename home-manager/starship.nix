@@ -3,19 +3,18 @@
     enable = true;
     settings = {
       add_newline = false;
-      time.disabled = false;
       format =
-        "$directory$git_branch$git_commit$git_state$git_metrics$git_status$env_var$custom$sudo$line_break$jobs$battery$status$nix_shell$character";
-      right_format = "$time$cmd_duration";
+        "$directory$git_commit$git_state$git_metrics$git_status$env_var$custom$sudo$line_break$jobs$battery$status$nix_shell$character";
+      right_format = "$cmd_duration";
       nix_shell = {
-        symbol = "";
+        symbol = " ";
         style = "bold lavender";
+        format = "[$symbol$state( ($name))]($style)";
       };
       sudo = {
         symbol = "sudo";
         disabled = false;
       };
-      git_branch.symbol = " ";
       directory = {
         style = "bold peach";
         truncation_length = 4;

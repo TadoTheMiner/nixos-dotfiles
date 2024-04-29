@@ -4,7 +4,6 @@
     settings = {
       main = { font = "JetBrainsMono Nerd Font:size=22"; };
       colors = {
-        alpha = "0.80";
         foreground = "cdd6f4";
         background = "1e1e2e";
         regular0 = "bac2de";
@@ -13,7 +12,7 @@
         regular3 = "f9e2af";
         regular4 = "89b4fa";
         regular5 = "f5c2e7";
-        regular6 = "94e2d5";
+        regular6 = "b4befe";
         regular7 = "585b70";
         bright0 = "a6adc8";
         bright1 = "f38ba8";
@@ -21,7 +20,7 @@
         bright3 = "f9e2af";
         bright4 = "89b4fa";
         bright5 = "f5c2e7";
-        bright6 = "94e2d5";
+        bright6 = "b4befe";
         bright7 = "45475a";
       };
 

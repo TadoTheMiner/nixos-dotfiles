@@ -1,7 +1,10 @@
 { ... }: {
   programs.firefox = {
     enable = true;
-    preferences = { "widget.use-xdg-desktop-portal.file-picker" = 1; };
+    preferences = {
+      "widget.use-xdg-desktop-portal.file-picker" = 1;
+      "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+    };
     policies = {
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
@@ -12,10 +15,6 @@
         Fingerprinting = true;
       };
       DisablePocket = true;
-      DisplayBookmarksToolbar = "always"; # alternatives: "always" or "newtab"
-      DisplayMenuBar = "off"; # alternatives: "always", "never" or "default-on"
-      SearchBar = "unified"; # alternative: "separate"
-
     };
   };
 

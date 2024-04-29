@@ -6,7 +6,7 @@ let
 
   rust-overlay = builtins.fetchTarball
     "https://github.com/oxalica/rust-overlay/archive/master.tar.gz";
-
+  zjstatus = pkgs.callPackage ./packages/zjstatus.nix { };
 in {
   nixpkgs.config = {
     allowUnfree = true;
@@ -15,6 +15,7 @@ in {
     ];
   };
   environment.systemPackages = with pkgs; [
+    neofetch
     unzip
     wl-clipboard
     nil
@@ -28,6 +29,7 @@ in {
     wiki-tui
     newsflash
     prismlauncher
+    zjstatus
   ];
   programs = {
     steam.enable = true;
