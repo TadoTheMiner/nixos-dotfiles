@@ -2,7 +2,7 @@
 (pkgs.makeRustPlatform {
   cargo = pkgs.rust-bin.stable.latest.default;
   rustc = pkgs.rust-bin.stable.latest.default;
-}).buildRustPackage {
+}).buildRustPackage rec {
   pname = "bing-wallpaper-server";
   version = "4900c7e";
 
@@ -13,7 +13,7 @@
     hash = "sha256-46GU8olBTFqxNz02KmOmZUmlaDjTXlcyOV0EkU2FjQQ=";
   };
   doCheck = false;
-  cargoHash = "sha256-DmtgN5L0lBFvdqZKHxcO0JkeNkBesE3Jo+Xb9+pDRmE=";
+  cargoLock.lockFile = "${src}/Cargo.lock";
   nativeBuildInputs = with pkgs; [ pkg-config ];
   buildInputs = with pkgs; [ openssl ];
 }

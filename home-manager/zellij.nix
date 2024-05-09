@@ -28,7 +28,7 @@ in {
                         format_space  ""
 
                         border_enabled  "false"
-                        hide_frame_for_single_pane "true"
+                        hide_frame_for_single_pane "false"
 
                         mode_normal  "#[bg=#fab387] "
                      
@@ -63,7 +63,7 @@ in {
                                       format_space  ""
 
                                       border_enabled  "false"
-                                      hide_frame_for_single_pane "true"
+                                      hide_frame_for_single_pane "false"
 
                                       mode_normal  "#[bg=#fab387] "
                                    

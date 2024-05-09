@@ -19,10 +19,26 @@
     enable = true;
     extraPortals = with pkgs; [ xdg-desktop-portal-wlr xdg-desktop-portal-gtk ];
   };
-
-  programs.dconf.enable = true;
+  programs = {
+    sway = {
+      enable = true;
+      wrapperFeatures.gtk = true;
+      extraPackages = with pkgs; [
+        swaybg
+        swappy
+        brightnessctl
+        grim
+        slurp
+        wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
+        mako # notification system developed by swaywm maintainer
+      ];
+    };
+    dconf.enable = true;
+    light.enable = true;
+  };
   services.xserver = {
     enable = true;
+    libinput.enable = true;
 
     # Bloatware
     excludePackages = [ pkgs.xterm ];

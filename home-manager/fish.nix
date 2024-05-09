@@ -36,7 +36,6 @@
         # Nix
         nrb = "sudo nixos-rebuild switch";
         ndv = "nix develop --command fish";
-        nsh = "nix-shell --command fish -p";
       };
     };
     zoxide.enable = true;

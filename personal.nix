@@ -20,7 +20,7 @@
   users.users.tadeas = {
     isNormalUser = true;
     description = "Tadeas Uradnik";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "input" ];
     shell = pkgs.fish;
   };
   home-manager.users.tadeas.programs.git = {

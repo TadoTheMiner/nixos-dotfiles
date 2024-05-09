@@ -6,6 +6,7 @@ let
 
   rust-overlay = builtins.fetchTarball
     "https://github.com/oxalica/rust-overlay/archive/master.tar.gz";
+  unstable = import <nixpkgs-unstable> { inherit (pkgs) system; };
   zjstatus = pkgs.callPackage ./packages/zjstatus.nix { };
 in {
   nixpkgs.config = {
@@ -14,10 +15,8 @@ in {
       "electron-25.9.0" # for obsidian
     ];
   };
-  environment.systemPackages = with pkgs; [
-    neofetch
+  environment.systemPackages = (with pkgs; [
     unzip
-    wl-clipboard
     nil
     nixfmt
     grc
@@ -29,8 +28,13 @@ in {
     wiki-tui
     newsflash
     prismlauncher
+    jdk21
     zjstatus
-  ];
+    mdbook
+    catppuccin-cursors.mochaDark
+  ]) ++ [ unstable.spicetify-cli ];
+
+  services.flatpak.enable = true;
   programs = {
     steam.enable = true;
     fish.enable = true;
