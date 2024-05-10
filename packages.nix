@@ -31,6 +31,7 @@ in {
     jdk21
     zjstatus
     mdbook
+    mpv
     catppuccin-cursors.mochaDark
   ]) ++ [ unstable.spicetify-cli ];
 

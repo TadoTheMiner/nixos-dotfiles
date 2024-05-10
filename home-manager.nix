@@ -7,7 +7,7 @@ in {
   home-manager.users.tadeas = {
     home.stateVersion = "23.11";
     imports = [
-      ./home-manager/alacritty.nix
+      ./home-manager/foot.nix
       ./home-manager/atuin.nix
       ./home-manager/bat.nix
       ./home-manager/eza.nix

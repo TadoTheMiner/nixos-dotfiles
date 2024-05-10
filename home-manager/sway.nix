@@ -9,8 +9,7 @@
         "XF86MonBrightnessUp" = "exec brightnessctl -q set 5%+";
 
       };
-      # Use kitty as default terminal
-      terminal = "alacritty";
+      terminal = "foot";
       startup = [
         {
           command = "swaybg -c \\#1e1e2e";
