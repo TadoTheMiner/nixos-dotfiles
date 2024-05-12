@@ -32,6 +32,8 @@ in {
     zjstatus
     mdbook
     mpv
+    meld
+    youtube-tui
     catppuccin-cursors.mochaDark
   ]) ++ [ unstable.spicetify-cli ];
 

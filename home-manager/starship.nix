@@ -4,7 +4,7 @@
     settings = {
       add_newline = false;
       format =
-        "$directory$git_commit$git_state$git_metrics$git_status$env_var$custom$sudo$line_break$jobs$battery$status$nix_shell$character";
+        "$directory$git_branch$git_commit$git_state$git_metrics$git_status$env_var$custom$sudo$line_break$jobs$battery$status$nix_shell$character";
       right_format = "$cmd_duration";
       nix_shell = {
         symbol = " ";

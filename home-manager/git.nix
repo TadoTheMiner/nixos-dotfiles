@@ -7,6 +7,7 @@
     enable = true;
     extraConfig = {
       push.autoSetupRemote = true;
+      merge.tool = "meld";
       gpg.format = "ssh";
       user.signingkey = "~/.ssh/signing_key.pub";
     };
