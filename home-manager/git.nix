@@ -1,15 +1,14 @@
-{ pkgs, ... }: {
-  home.sessionVariables = {
-    SSH_ASKPASS_REQUIRE = "prefer";
-    GIT_ASKPASS = "${pkgs.libsForQt5.ksshaskpass}/bin/ksshaskpass";
-  };
+{...}: {
   programs.git = {
     enable = true;
+    userName = "Tadeas Uradnik";
+    userEmail = "taduradnik@gmail.com";
     extraConfig = {
       push.autoSetupRemote = true;
       merge.tool = "meld";
       gpg.format = "ssh";
-      user.signingkey = "~/.ssh/signing_key.pub";
+      commit.gpgSign = "true";
+      user.signingkey = "~/.ssh/id_ed25519.pub";
     };
   };
 }

@@ -1,7 +1,7 @@
-{ ... }: {
+{...}: {
   programs.helix.themes.catppuccin_simplified = {
     inherits = "catppuccin_mocha";
-    "ui.background" = { };
+    "ui.background" = {};
     "ui.popup" = {
       fg = "text";
       bg = "crust";
@@ -12,8 +12,8 @@
     };
     "ui.statusline" = {
       fg = "text";
-      bg = { };
-      modifiers = [ "bold " ];
+      bg = {};
+      modifiers = ["bold "];
     };
     "ui.statusline.inactive" = {
       fg = "text";
@@ -21,16 +21,16 @@
     };
     "ui.selection" = {
       bg = "crust";
-      modifiers = [ "bold" ];
+      modifiers = ["bold"];
     };
     "ui.text.focus" = {
       fg = "peach";
       bg = "crust";
-      modifiers = [ "bold" ];
+      modifiers = ["bold"];
     };
     "ui.highlight" = {
       bg = "crust";
-      modifiers = [ "bold" ];
+      modifiers = ["bold"];
     };
     "ui.linenr".fg = "overlay2";
     "ui.linenr.selected".fg = "peach";
@@ -43,7 +43,7 @@
     "ui.menu.selected" = {
       fg = "peach";
       bg = "crust";
-      modifiers = [ "bold" ];
+      modifiers = ["bold"];
     };
     "ui.bufferline" = {
       fg = "subtext0";

@@ -1,7 +1,7 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   programs.bat = {
     enable = true;
-    config = { theme = "catppuccin"; };
+    config.theme = "catppuccin";
     themes = {
       catppuccin = {
         src = pkgs.fetchFromGitHub {
@@ -15,4 +15,3 @@
     };
   };
 }
-

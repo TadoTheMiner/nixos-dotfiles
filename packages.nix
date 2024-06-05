@@ -1,13 +1,8 @@
-{ pkgs, ... }:
-let
-  sddm-theme = pkgs.libsForQt5.callPackage ./packages/sddm-theme.nix { };
+{pkgs, ...}: let
+  sddm-theme = pkgs.libsForQt5.callPackage ./packages/sddm-theme.nix {};
   bing-wallpaper-server =
-    pkgs.callPackage ./packages/bing-wallpaper-server.nix { };
-
-  rust-overlay = builtins.fetchTarball
-    "https://github.com/oxalica/rust-overlay/archive/master.tar.gz";
-  unstable = import <nixpkgs-unstable> { inherit (pkgs) system; };
-  zjstatus = pkgs.callPackage ./packages/zjstatus.nix { };
+    pkgs.callPackage ./packages/bing-wallpaper-server.nix {};
+  zjstatus = pkgs.callPackage ./packages/zjstatus.nix {};
 in {
   nixpkgs.config = {
     allowUnfree = true;
@@ -15,10 +10,15 @@ in {
       "electron-25.9.0" # for obsidian
     ];
   };
-  environment.systemPackages = (with pkgs; [
+  environment.systemPackages = with pkgs; [
     unzip
+    networkmanagerapplet
+    jq
+    gnumake
+    ghc
+    killall
     nil
-    nixfmt
+    alejandra
     grc
     sddm-theme
     gh
@@ -33,18 +33,26 @@ in {
     mdbook
     mpv
     meld
+    htop
     youtube-tui
+    rustup
+    cargo-nextest
+    cargo-make
+    gcc
+    bacon
+    (pkgs.discord.override {
+      # remove any overrides that you don't want
+      withOpenASAR = true;
+    })
+    spicetify-cli
+    nasm
+    libnotify
     catppuccin-cursors.mochaDark
-  ]) ++ [ unstable.spicetify-cli ];
-
-  services.flatpak.enable = true;
+  ];
+  services.flatpak.enable =
+    true;
   programs = {
     steam.enable = true;
-    fish.enable = true;
-    fzf = {
-      fuzzyCompletion = true;
-      keybindings = true;
-    };
+    zsh.enable = true;
   };
-  nixpkgs.overlays = [ (import rust-overlay) ];
 }

@@ -1,8 +1,8 @@
-{ ... }: {
+{...}: {
   programs.firefox = {
     enable = true;
     preferences = {
-      "widget.use-xdg-desktop-portal.file-picker" = 1;
+      "widget.use-xdg-desktop-portal.file-picker" = 0;
       "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
       "browser.altClickSave" = true;
     };
@@ -18,5 +18,4 @@
       DisablePocket = true;
     };
   };
-
 }

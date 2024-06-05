@@ -1,5 +1,5 @@
-{ pkgs, ... }:
-let zjstatus = pkgs.callPackage ../packages/zjstatus.nix { };
+{pkgs, ...}: let
+  zjstatus = pkgs.callPackage ../packages/zjstatus.nix {};
 in {
   programs.zellij = {
     enable = true;
@@ -8,6 +8,7 @@ in {
       mouse_mode = false;
       pane_frames = false;
       simplified_ui = true;
+      session_serialization = false;
     };
   };
 
@@ -31,7 +32,7 @@ in {
                         hide_frame_for_single_pane "false"
 
                         mode_normal  "#[bg=#fab387] "
-                     
+                   
                         tab_normal   "#[fg=#6C7086] {name} "
                         tab_active   "#[fg=#fab387,bold,italic] {name} "
 
@@ -66,7 +67,7 @@ in {
                                       hide_frame_for_single_pane "false"
 
                                       mode_normal  "#[bg=#fab387] "
-                                   
+                                 
                                       tab_normal   "#[fg=#6C7086] {name} "
                                       tab_active   "#[fg=#fab387,bold,italic] {name} "
 
@@ -84,8 +85,8 @@ in {
       tab name="helix" {
         pane command="hx"
       }
-      tab name="fish"
-                              
+      tab name="zsh"
+                            
                   }'';
   };
 }

@@ -1,5 +1,13 @@
-{ fetchFromGitHub, qtbase, qtsvg, qtgraphicaleffects, qtquickcontrols2
-, wrapQtAppsHook, stdenvNoCC }:
+{
+  fetchFromGitHub,
+  qtbase,
+  qtsvg,
+  qtgraphicaleffects,
+  qtquickcontrols2,
+  wrapQtAppsHook,
+  stdenvNoCC,
+  ...
+}:
 stdenvNoCC.mkDerivation {
   pname = "sddm-theme";
   version = "bc892a9";
@@ -14,7 +22,6 @@ stdenvNoCC.mkDerivation {
     rev = "bc892a9423607298143e8c52eca95f44670206ed";
     sha256 = "sha256-fzz/YUantBvUbfIJS0eIe+xTnVyDxPk16DRNzxHtV3k";
   };
-  propagatedUserEnvPkgs = [ qtbase qtsvg qtgraphicaleffects qtquickcontrols2 ];
-  nativeBuildInputs = [ wrapQtAppsHook ];
+  propagatedUserEnvPkgs = [qtbase qtsvg qtgraphicaleffects qtquickcontrols2];
+  nativeBuildInputs = [wrapQtAppsHook];
 }
-

@@ -1,8 +1,9 @@
-{ pkgs, ... }:
+{pkgs, ...}:
 (pkgs.makeRustPlatform {
   cargo = pkgs.rust-bin.stable.latest.default;
   rustc = pkgs.rust-bin.stable.latest.default;
-}).buildRustPackage rec {
+})
+.buildRustPackage rec {
   pname = "bing-wallpaper-server";
   version = "4900c7e";
 
@@ -14,6 +15,6 @@
   };
   doCheck = false;
   cargoLock.lockFile = "${src}/Cargo.lock";
-  nativeBuildInputs = with pkgs; [ pkg-config ];
-  buildInputs = with pkgs; [ openssl ];
+  nativeBuildInputs = with pkgs; [pkg-config];
+  buildInputs = with pkgs; [openssl];
 }

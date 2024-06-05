@@ -1,7 +1,6 @@
-{ ... }: {
+{...}: {
   programs.helix.settings.editor = {
     mouse = false;
-    auto-save = true;
     color-modes = true;
     popup-border = "all";
     completion-replace = true;
@@ -13,8 +12,8 @@
         "separator"
         "diagnostics"
       ];
-      center = [ "file-base-name" ];
-      right = [ "position" ];
+      center = ["file-base-name"];
+      right = ["position"];
       mode = {
         normal = "Normal";
         insert = "Insert";

@@ -1,19 +1,12 @@
-{ pkgs, ... }:
-let
-  unstable = import <nixpkgs-unstable> {
-    inherit (pkgs) system;
-    # another config, etc. if needed
-  };
-in {
-  xdg.configFile."helix/ignore".text = ''
-    Cargo.lock
-    flake.lock
-    !.gitignore
-    !personal.nix'';
+{...}: {
   programs.helix = {
     enable = true;
+    ignores = [
+      "Cargo.lock"
+      "flake.lock"
+      "!.gitignore"
+    ];
     defaultEditor = true;
-    package = unstable.helix;
     settings.theme = "catppuccin_simplified";
   };
   imports = [
@@ -22,5 +15,4 @@ in {
     ./helix/keybinds.nix
     ./helix/languages.nix
   ];
-
 }
