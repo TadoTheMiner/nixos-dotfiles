@@ -1,6 +1,5 @@
 {...}: {
   home = {
-    # backupFileExtension = "backup";
     stateVersion = "23.11";
     file = {
       ".local/bin" = {
@@ -15,16 +14,12 @@
         source = ./configs/youtube-tui;
         recursive = true;
       };
-      ".config/discord/settings.json" = {
-        source = ./configs/discord.json;
-        recursive = true;
-        force = true;
-      };
     };
   };
   imports = [
     ./home-manager/kitty.nix
     ./home-manager/atuin.nix
+    ./home-manager/discord.nix
     ./home-manager/bat.nix
     ./home-manager/eza.nix
     ./home-manager/zsh.nix

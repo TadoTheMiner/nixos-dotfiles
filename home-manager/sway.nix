@@ -1,6 +1,7 @@
 {...}: {
   wayland.windowManager.sway = {
     enable = true;
+    wrapperFeatures.gtk = true;
     config = {
       bars = [{command = "waybar";}];
       keybindings = {

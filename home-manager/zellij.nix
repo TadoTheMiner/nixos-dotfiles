@@ -1,5 +1,41 @@
-{pkgs, ...}: let
-  zjstatus = pkgs.callPackage ../packages/zjstatus.nix {};
+{
+  zjstatus,
+  system,
+  ...
+}: let
+  default-tab-template = ''
+    default_tab_template {
+          children
+          pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+          }
+          pane size=1 borderless=true {
+              plugin location="file://${zjstatus.packages.${system}.default}/bin/zjstatus.wasm" {
+                  format_left   "#[fg=#fab387,bold]{session}"
+                  format_center "{tabs}"
+                  format_right  "{command_git_branch} {datetime}"
+                  format_space  ""
+
+                  border_enabled  "false"
+                  hide_frame_for_single_pane "false"
+
+                  mode_normal  "#[bg=#fab387] "
+
+                  tab_normal   "#[fg=#6C7086] {name} "
+                  tab_active   "#[fg=#fab387,bold,italic] {name} "
+
+                  command_git_branch_command     "git rev-parse --abbrev-ref HEAD"
+                  command_git_branch_format      "#[fg=blue] {stdout} "
+                  command_git_branch_interval    "10"
+                  command_git_branch_rendermode  "static"
+
+                  datetime        "#[fg=#6C7086] {format} "
+                  datetime_format "%a, %d %b %Y %H:%M"
+                  datetime_timezone "Europe/Berlin"
+            }
+        }
+    }
+  '';
 in {
   programs.zellij = {
     enable = true;
@@ -15,78 +51,14 @@ in {
   # Layouts
   xdg.configFile = {
     "zellij/layouts/default.kdl".text = ''
-        layout {
-              default_tab_template {
-                children
-                pane size=2 borderless=true {
-                  plugin location="zellij:status-bar"
-                }
-                pane size=1 borderless=true {
-                    plugin location="file://${zjstatus}/zjstatus.wasm" {
-                        format_left   "#[fg=#fab387,bold]{session}"
-                        format_center "{tabs}"
-                        format_right  "{command_git_branch} {datetime}"
-                        format_space  ""
-
-                        border_enabled  "false"
-                        hide_frame_for_single_pane "false"
-
-                        mode_normal  "#[bg=#fab387] "
-                   
-                        tab_normal   "#[fg=#6C7086] {name} "
-                        tab_active   "#[fg=#fab387,bold,italic] {name} "
-
-                        command_git_branch_command     "git rev-parse --abbrev-ref HEAD"
-                        command_git_branch_format      "#[fg=blue] {stdout} "
-                        command_git_branch_interval    "10"
-                        command_git_branch_rendermode  "static"
-
-                        datetime        "#[fg=#6C7086] {format} "
-                        datetime_format "%a, %d %b %Y %H:%M"
-                        datetime_timezone "Europe/Berlin"
-                  }
-              }
-            }
-        tab
-      }'';
+      layout {${default-tab-template}}'';
     "zellij/layouts/programming.kdl".text = ''
-                    layout {
-                          default_tab_template {
-                              children
-                              pane size=2 borderless=true {
-                                plugin location="zellij:status-bar"
-                              }
-                              pane size=1 borderless=true {
-                                  plugin location="file://${zjstatus}/zjstatus.wasm" {
-                                      format_left   "#[fg=#fab387,bold]{session}"
-                                      format_center "{tabs}"
-                                      format_right  "{command_git_branch} {datetime}"
-                                      format_space  ""
-
-                                      border_enabled  "false"
-                                      hide_frame_for_single_pane "false"
-
-                                      mode_normal  "#[bg=#fab387] "
-                                 
-                                      tab_normal   "#[fg=#6C7086] {name} "
-                                      tab_active   "#[fg=#fab387,bold,italic] {name} "
-
-                                      command_git_branch_command     "git rev-parse --abbrev-ref HEAD"
-                                      command_git_branch_format      "#[fg=blue] {stdout} "
-                                      command_git_branch_interval    "10"
-                                      command_git_branch_rendermode  "static"
-
-                                      datetime        "#[fg=#6C7086] {format} "
-                                      datetime_format "%a, %d %b %Y %H:%M"
-                                      datetime_timezone "Europe/Berlin"
-                                }
-                            }
-                        }
-      tab name="helix" {
-        pane command="hx"
-      }
-      tab name="zsh"
-                            
-                  }'';
+      layout {
+            ${default-tab-template}
+            tab name="helix" {
+              pane command="hx"
+            }
+            tab name="zsh"
+      }'';
   };
 }

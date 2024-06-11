@@ -1,9 +1,4 @@
-{pkgs, ...}: let
-  sddm-theme = pkgs.libsForQt5.callPackage ./packages/sddm-theme.nix {};
-  bing-wallpaper-server =
-    pkgs.callPackage ./packages/bing-wallpaper-server.nix {};
-  zjstatus = pkgs.callPackage ./packages/zjstatus.nix {};
-in {
+{pkgs, ...}: {
   nixpkgs.config = {
     allowUnfree = true;
     permittedInsecurePackages = [
@@ -14,22 +9,20 @@ in {
     unzip
     networkmanagerapplet
     jq
+    unciv
     gnumake
     ghc
     killall
     nil
     alejandra
     grc
-    sddm-theme
     gh
     obsidian
     commitizen
-    bing-wallpaper-server
     wiki-tui
     newsflash
     prismlauncher
     jdk21
-    zjstatus
     mdbook
     mpv
     meld

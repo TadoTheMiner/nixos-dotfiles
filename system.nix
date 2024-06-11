@@ -1,8 +1,10 @@
-{pkgs, ...}: let
-  path = "/run/current-system/sw/bin/";
-in {
+{
+  bing-wallpaper-server,
+  pkgs,
+  ...
+}: {
   boot = {
-    kernelParams = ["quiet"];
+    kernelParams = ["quiet" "vt.default_red=30,243,166,249,137,245,148,186,88,243,166,249,137,245,148,166" "vt.default_grn=30,139,227,226,180,194,226,194,91,139,227,226,180,194,226,173" "vt.default_blu=46,168,161,175,250,231,213,222,112,168,161,175,250,231,213,200"];
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
@@ -39,7 +41,7 @@ in {
         {
           commands = [
             {
-              command = "${path}nix*";
+              command = "/run/current-system/sw/bin/nix*";
               options = ["NOPASSWD"];
             }
           ];
@@ -51,7 +53,7 @@ in {
 
   systemd.services.bing-wallpaper-server = {
     script = "${
-      pkgs.callPackage ./packages/bing-wallpaper-server.nix {}
+      bing-wallpaper-server.packages.${pkgs.system}.bing-wallpaper-server
     }/bin/bing-wallpaper-server 10000 /tmp/image.jpg";
     wantedBy = ["multi-user.target"];
     enable = true;

@@ -36,13 +36,32 @@
     dconf.enable = true;
     seahorse.enable = true;
   };
-  services.displayManager = {
-    defaultSession = "sway";
-    sddm = {
-      enable = true;
-      wayland.enable = true;
-      theme = "sddm-theme";
-      settings.Theme.CursorTheme = "Catppuccin-Mocha-Dark-Cursors";
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --asterisks --time --cmd sway";
+        user = "greeter";
+      };
     };
+  };
+  #The reason we enable xorg and disable everything in it is that it makes some defaults
+  services.xserver = {
+    enable = true;
+    excludePackages = with pkgs; [
+      xorg.xorgserver.out
+      xorg.xrandr
+      xorg.xrdb
+      xorg.setxkbmap
+      xorg.iceauth
+      xorg.xlsclients
+      xorg.xset
+      xorg.xsetroot
+      xorg.xinput
+      xorg.xprop
+      xorg.xauth
+      pkgs.xterm
+      xorg.xf86inputevdev.out
+    ];
   };
 }
