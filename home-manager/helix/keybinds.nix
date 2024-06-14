@@ -6,7 +6,6 @@
       C-left = "move_prev_word_end";
     };
     insert = {
-      esc = ["normal_mode" ":w"];
       C-A-q = ":qa!";
       C-right = "move_next_word_start";
       C-left = "move_prev_word_end";

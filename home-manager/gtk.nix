@@ -17,7 +17,10 @@
       size = 22;
     };
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
-    iconTheme.name = "breeze-dark";
+    iconTheme = {
+      name = "papirus";
+      package = pkgs.papirus-icon-theme;
+    };
     font = {
       size = 22;
       name = "Ubuntu";

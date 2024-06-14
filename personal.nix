@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   # Set your time zone.
   time.timeZone = "Europe/Bratislava";
 
@@ -22,7 +22,6 @@
     isNormalUser = true;
     description = "Tadeas Uradnik";
     extraGroups = ["networkmanager" "wheel" "input" "video"];
-    shell = pkgs.zsh;
   };
   home-manager.users.tadeas.programs.git = {
     userName = "Tadeas Uradnik";

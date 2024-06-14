@@ -7,10 +7,9 @@
       "!.gitignore"
     ];
     defaultEditor = true;
-    settings.theme = "catppuccin_simplified";
+    settings.theme = "catppuccin_mocha";
   };
   imports = [
-    ./helix/theme.nix
     ./helix/settings.nix
     ./helix/keybinds.nix
     ./helix/languages.nix

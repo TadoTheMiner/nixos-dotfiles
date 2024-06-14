@@ -1,6 +1,6 @@
 {
   zjstatus,
-  system,
+  pkgs,
   ...
 }: let
   default-tab-template = ''
@@ -10,7 +10,7 @@
             plugin location="zellij:status-bar"
           }
           pane size=1 borderless=true {
-              plugin location="file://${zjstatus.packages.${system}.default}/bin/zjstatus.wasm" {
+              plugin location="file://${zjstatus.packages.${pkgs.system}.default}/bin/zjstatus.wasm" {
                   format_left   "#[fg=#fab387,bold]{session}"
                   format_center "{tabs}"
                   format_right  "{command_git_branch} {datetime}"
@@ -49,10 +49,10 @@ in {
   };
 
   # Layouts
-  xdg.configFile = {
-    "zellij/layouts/default.kdl".text = ''
+  home.file = {
+    ".config/zellij/layouts/default.kdl".text = ''
       layout {${default-tab-template}}'';
-    "zellij/layouts/programming.kdl".text = ''
+    ".config/zellij/layouts/programming.kdl".text = ''
       layout {
             ${default-tab-template}
             tab name="helix" {
@@ -60,5 +60,13 @@ in {
             }
             tab name="zsh"
       }'';
+    ".cache/zellij/permissions.kdl" = {
+      text = "\"/nix/store/5hxi3vajjkc5l8hbbaj3p5k6km82s7b4-zjstatus-0.15.0/bin/zjstatus.wasm\" {
+      RunCommands
+      ReadApplicationState
+      ChangeApplicationState
+    }";
+      force = true;
+    };
   };
 }

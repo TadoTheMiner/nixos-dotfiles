@@ -3,13 +3,13 @@
     fontDir.enable = true;
     packages = with pkgs; [
       ubuntu_font_family
-      (nerdfonts.override {fonts = ["JetBrainsMono"];})
+      (nerdfonts.override {fonts = ["UbuntuMono"];})
     ];
     fontconfig = {
       defaultFonts = {
         serif = ["Ubuntu"];
         sansSerif = ["Ubuntu"];
-        monospace = ["JetBrainsMono Nerd Font"];
+        monospace = ["UbuntuMono Nerd Font"];
       };
       subpixel.rgba = "rgb";
     };
@@ -30,38 +30,41 @@
         slurp
         cliphist
         pamixer
+        playerctl
         wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
       ];
     };
     dconf.enable = true;
     seahorse.enable = true;
   };
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --asterisks --time --cmd sway";
-        user = "greeter";
+  services = {
+    libinput.enable = true;
+
+    greetd = {
+      enable = true;
+      settings = {
+        default_session = {
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --asterisks --time --cmd sway";
+          user = "greeter";
+        };
       };
     };
-  };
-  #The reason we enable xorg and disable everything in it is that it makes some defaults
-  services.xserver = {
-    enable = true;
-    excludePackages = with pkgs; [
-      xorg.xorgserver.out
-      xorg.xrandr
-      xorg.xrdb
-      xorg.setxkbmap
-      xorg.iceauth
-      xorg.xlsclients
-      xorg.xset
-      xorg.xsetroot
-      xorg.xinput
-      xorg.xprop
-      xorg.xauth
-      pkgs.xterm
-      xorg.xf86inputevdev.out
-    ];
+    xserver = {
+      enable = true;
+      excludePackages = with pkgs.xorg; [
+        xorgserver.out
+        xrandr
+        xrdb
+        setxkbmap
+        iceauth
+        xlsclients
+        xset
+        xsetroot
+        xinput
+        xprop
+        xauth
+        pkgs.xterm
+      ];
+    };
   };
 }

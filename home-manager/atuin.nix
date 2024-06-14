@@ -1,6 +1,9 @@
 {...}: {
   programs.atuin = {
     enable = true;
-    settings.show_help = false;
+    settings = {
+      style = "compact";
+      update_check = false;
+    };
   };
 }

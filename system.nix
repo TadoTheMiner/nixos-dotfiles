@@ -15,14 +15,15 @@
     hostName = "nixos";
     networkmanager.enable = true;
   };
-
+  users.defaultUserShell = pkgs.zsh;
+  programs = {
+    ssh.startAgent = true;
+    zsh.enable = true;
+  };
   sound.enable = true;
-  hardware.pulseaudio.enable = false;
-
   services = {
     power-profiles-daemon.enable = false;
     tlp.enable = true;
-    printing.enable = false;
     pipewire = {
       enable = true;
       alsa = {

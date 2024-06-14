@@ -5,14 +5,16 @@
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     catppuccin-discord = {
       url = "https://catppuccin.github.io/discord/dist/catppuccin-mocha-peach.theme.css";
       flake = false;
     };
+
+    catppuccin-starship = {
+      url = "github:catppuccin/starship";
+      flake = false;
+    };
+
     zjstatus = {
       url = "github:dj95/zjstatus";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -22,14 +24,19 @@
       url = "github:TadoTheMiner/bing-wallpaper-server";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    spicetify = {
+      url = "github:the-argus/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = {
     nixpkgs,
     home-manager,
     zjstatus,
-    rust-overlay,
     catppuccin-discord,
+    catppuccin-starship,
     bing-wallpaper-server,
+    spicetify,
     ...
   }: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
@@ -39,20 +46,21 @@
         ./hardware-configuration.nix
         ./desktop.nix
         ./packages.nix
+        ./programming.nix
+        ./utilities.nix
+        ./gaming.nix
         ./firefox.nix
         ./personal.nix
         ./system.nix
         {
           nix.settings.experimental-features = ["nix-command" "flakes"];
           system.stateVersion = "23.11";
-          nixpkgs.overlays = [rust-overlay.overlays.default];
         }
         home-manager.nixosModules.home-manager
         {
           home-manager = {
             extraSpecialArgs = {
-              inherit zjstatus catppuccin-discord;
-              system = "x86_64-linux";
+              inherit zjstatus catppuccin-discord catppuccin-starship spicetify;
             };
 
             useGlobalPkgs = true;

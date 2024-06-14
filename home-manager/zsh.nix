@@ -1,13 +1,8 @@
 {...}: {
   programs = {
     zsh = {
-      loginExtra = "eval $(ssh-agent); export PATH=~/.local/bin:$PATH";
-      dotDir = ".config/zsh";
       enable = true;
-      oh-my-zsh = {
-        enable = true;
-        plugins = ["git" "rust"];
-      };
+      dotDir = "~/.config/zsh";
       syntaxHighlighting.enable = true;
       shellAliases = {
         # Coreutils
@@ -16,12 +11,17 @@
         ln = "ln -s";
         rm = "rm -rI";
         rmf = "rm -rf";
-        mdr = "mkdir -p";
         cp = "cp -r";
         cd = "z";
         cat = "bat -p";
+        mdr = "mkdir -p";
         # Git
+        g = "git";
         gc = "git add .; cz commit";
+        gp = "git push";
+        gl = "git pull";
+        gf = "git fetch";
+        gup = "git add .; git commit -m update";
         # Nix
         nrb = "sudo nixos-rebuild switch";
         ndv = "nix develop --command zsh";
@@ -46,5 +46,6 @@
       };
     };
     zoxide.enable = true;
+    carapace.enable = true;
   };
 }
