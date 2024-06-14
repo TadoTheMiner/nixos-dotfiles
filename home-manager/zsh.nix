@@ -2,7 +2,7 @@
   programs = {
     zsh = {
       enable = true;
-      dotDir = "~/.config/zsh";
+      dotDir = ".config/zsh";
       syntaxHighlighting.enable = true;
       shellAliases = {
         # Coreutils
