@@ -38,8 +38,6 @@
     seahorse.enable = true;
   };
   services = {
-    libinput.enable = true;
-
     greetd = {
       enable = true;
       settings = {

@@ -74,5 +74,8 @@ in {
     "XF86AudioPause" = "exec playerctl play-pause";
     "XF86AudioNext" = "exec playerctl next";
     "XF86AudioPrev" = "exec playerctl previous";
+
+    "--no-repeat F8" = "seat * cursor press button1";
+    "--no-repeat --release F8" = "seat * cursor release button1";
   };
 }
