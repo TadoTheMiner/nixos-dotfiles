@@ -8,7 +8,7 @@
       openasar = {
         setup = true;
         cmdPreset = "balanced";
-        css = ".wrapper__216eb.guilds__2b93a{display: none;} * {font-family: Ubuntu !important;} ${builtins.readFile catppuccin-discord}";
+        css = ".wrapper_fea3ef.guilds_a4d4d9{display: none;} * {font-family: Ubuntu !important;} ${builtins.readFile catppuccin-discord}";
       };
       chromiumSwitches = {};
       MINIMIZE_TO_TRAY = false;

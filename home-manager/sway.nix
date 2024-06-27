@@ -1,4 +1,4 @@
-{...}: {
+{lib, ...}: {
   imports = [./sway/keybindings.nix];
   wayland.windowManager.sway = {
     enable = true;
@@ -56,16 +56,25 @@
       };
     };
   };
-  services.mako = {
-    enable = true;
-    backgroundColor = "#1e1e2e";
-    borderColor = "#fab387";
-    borderSize = 2;
-    borderRadius = 20;
-    textColor = "#cdd6f4";
-    progressColor = "#fab387";
-    width = 600;
-    font = "Ubuntu 20";
+  services = {
+    mako = {
+      enable = true;
+      borderColor = lib.mkForce "#fab387";
+      borderSize = 2;
+      borderRadius = 20;
+      width = 600;
+      font = "Ubuntu 20";
+    };
+    swayidle = {
+      enable = true;
+      timeouts = [
+        {
+          timeout = 150;
+          command = "swaymsg \"output * dpms off\"";
+          resumeCommand = "swaymsg \"output * dpms on\"";
+        }
+      ];
+    };
   };
   programs = {
     wofi = {
@@ -77,25 +86,10 @@
     swaylock = {
       enable = true;
       settings = {
-        color = "1e1e2e";
         font = "Ubuntu";
         font-size = 24;
-        ring-color = "fab387";
-        key-hl-color = "b4befe";
-        inside-color = "1e1e2e";
-        inside-wrong-color = "f38ba8";
-        ring-wrong-color = "f38ba8";
-        text-color = "cdd6f4";
-        text-clear-color = "1e1e2e";
-        text-caps-lock-color = "cdd6f4";
-        text-ver-color = "1e1e2e";
-        text-wrong-color = "1e1e2e";
-        separator-color = "00000000";
-        ring-ver-color = "fab387";
-        inside-ver-color = "fab387";
-        ring-clear-color = "a6e3a1";
-        inside-clear-color = "a6e3a1";
-        bs-hl-color = "f38ba8";
+        ring-color = lib.mkForce "fab387";
+        ring-ver-color = lib.mkForce "fab387";
         indicator-idle-visible = false;
         indicator-radius = 100;
         show-failed-attempts = true;

@@ -3,6 +3,7 @@
     prismlauncher
     unciv
     steam-run
+    minecraft-server
   ];
   programs.java.enable = true;
   services.flatpak.enable = true; # for steam

@@ -7,7 +7,6 @@
       "!.gitignore"
     ];
     defaultEditor = true;
-    settings.theme = "catppuccin_mocha";
   };
   imports = [
     ./helix/settings.nix

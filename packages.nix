@@ -12,12 +12,13 @@
     mpv
     htop
     youtube-tui
+    musikcube
+    eartag
+    spotdl
     (pkgs.discord.override {
       withOpenASAR = true;
     })
-    spicetify-cli
     libnotify
-    catppuccin-cursors.mochaDark
     obsidian
   ];
 }

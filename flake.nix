@@ -10,10 +10,7 @@
       flake = false;
     };
 
-    catppuccin-starship = {
-      url = "github:catppuccin/starship";
-      flake = false;
-    };
+    catppuccin.url = "github:catppuccin/nix";
 
     zjstatus = {
       url = "github:dj95/zjstatus";
@@ -24,19 +21,14 @@
       url = "github:TadoTheMiner/bing-wallpaper-server";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    spicetify = {
-      url = "github:the-argus/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
   outputs = {
     nixpkgs,
     home-manager,
     zjstatus,
     catppuccin-discord,
-    catppuccin-starship,
+    catppuccin,
     bing-wallpaper-server,
-    spicetify,
     ...
   }: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
@@ -52,19 +44,21 @@
         ./firefox.nix
         ./personal.nix
         ./system.nix
+        ./catppuccin.nix
         {
           nix.settings.experimental-features = ["nix-command" "flakes"];
           system.stateVersion = "23.11";
         }
+        catppuccin.nixosModules.catppuccin
         home-manager.nixosModules.home-manager
         {
           home-manager = {
             extraSpecialArgs = {
-              inherit zjstatus catppuccin-discord catppuccin-starship spicetify;
+              inherit zjstatus catppuccin-discord;
             };
 
             useGlobalPkgs = true;
-            users.tadeas = import ./home-manager.nix;
+            users.tadeas.imports = [./home-manager.nix catppuccin.homeManagerModules.catppuccin];
           };
         }
       ];
