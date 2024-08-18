@@ -1,4 +1,5 @@
 {
+  config,
   zjstatus,
   pkgs,
   ...
@@ -50,9 +51,9 @@ in {
 
   # Layouts
   home.file = {
-    ".config/zellij/layouts/default.kdl".text = ''
+    "${config.xdg.configHome}/zellij/layouts/default.kdl".text = ''
       layout {${default-tab-template}}'';
-    ".config/zellij/layouts/programming.kdl".text = ''
+    "${config.xdg.configHome}/zellij/layouts/programming.kdl".text = ''
       layout {
             ${default-tab-template}
             tab name="helix" {

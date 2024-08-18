@@ -1,0 +1,4 @@
+Entering capture thread (ALSA).
+Cannot open PCM capture device: Host is down(-112)
+Exit capture thread fail: -112
+alsabat -C default --standalone

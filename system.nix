@@ -17,12 +17,12 @@
     hostName = "nixos";
     networkmanager.enable = true;
   };
+  sound.enable = false;
   users.defaultUserShell = pkgs.zsh;
   programs = {
     ssh.startAgent = true;
     zsh.enable = true;
   };
-  sound.enable = true;
   services = {
     power-profiles-daemon.enable = false;
     tlp.enable = true;

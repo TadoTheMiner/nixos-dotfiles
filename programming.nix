@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     rustup
+    thonny
     cargo-nextest
     cargo-make
     gcc

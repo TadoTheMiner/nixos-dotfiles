@@ -11,10 +11,10 @@
     mdbook
     mpv
     htop
-    youtube-tui
     musikcube
     eartag
     spotdl
+    gnome.nautilus
     (pkgs.discord.override {
       withOpenASAR = true;
     })

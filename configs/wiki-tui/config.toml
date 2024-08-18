@@ -11,7 +11,7 @@ title = 'red'
 highlight = 'red'
 background = '#1e1e2e'
 search_match = 'red'
-highlight_text = '#b4befe'
+highlight_text = '#fab387'
 highlight_inactive = '#11111b'
 
 [logging]

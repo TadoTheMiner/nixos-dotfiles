@@ -6,6 +6,8 @@
     jq
     killall
     file
+    usbutils
+    picocom
     evtest
   ];
 }

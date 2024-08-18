@@ -1,0 +1,4 @@
+Entering playback thread (ALSA).
+Cannot open PCM playback device: Host is down(-112)
+Exit playback thread fail: -112
+alsabat -P default -C default -c1

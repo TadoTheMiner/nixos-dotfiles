@@ -6,7 +6,21 @@
       size = 22;
       name = "Ubuntu";
     };
+    catppuccin = {
+      enable = true;
+      icon.enable = true;
+    };
   };
-  home.file."${config.gtk.gtk2.configLocation}".force =
-    true;
+  home = {
+    file."${config.gtk.gtk2.configLocation}".force =
+      true;
+    pointerCursor = {
+      size = 22;
+      x11 = {
+        enable = true;
+        defaultCursor = "catppuccin-mocha-dark-cursors";
+      };
+      gtk.enable = true;
+    };
+  };
 }

@@ -5,10 +5,10 @@ in {
     "Mod4+Print" = "exec ${screenshot} window";
     "Print" = "exec ${screenshot} region";
     "Shift+Print" = "exec ${screenshot} fullscreen";
-    "Mod4+p" = "exec cliphist list | wofi -S dmenu | cliphist decode | wl-copy";
+    "Mod4+p" = "exec cliphist list | fuzzel -d | cliphist decode | wl-copy";
     "Mod4+Return" = "exec foot";
     "Mod4+Shift+q" = "kill";
-    "Mod4+d" = "exec wofi --show drun | xargs swaymsg exec --";
+    "Mod4+d" = "exec fuzzel | xargs swaymsg exec --";
 
     "Mod4+Left" = "focus left";
     "Mod4+Right" = "focus right";
@@ -30,8 +30,9 @@ in {
     "Mod4+1" = "workspace number 1";
     #discord
     "Mod4+2" = "workspace number 2";
-    #spotify
+    #music
     "Mod4+3" = "workspace number 3";
+
     "Mod4+4" = "workspace number 4";
     "Mod4+5" = "workspace number 5";
     "Mod4+6" = "workspace number 6";

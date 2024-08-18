@@ -1,0 +1,5 @@
+Cannot open PCM playback device: Host is down(-112)
+Exit playback thread fail: -112
+alsa-utils version 1.2.10
+
+Entering playback thread (ALSA).

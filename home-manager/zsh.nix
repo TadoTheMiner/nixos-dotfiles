@@ -1,4 +1,4 @@
-{...}: {
+{lib, ...}: {
   programs = {
     zsh = {
       enable = true;
@@ -28,7 +28,20 @@
         nsh = "nix-shell --command zsh -p";
       };
     };
-    fzf.enable = true;
+    fzf = {
+      enable = true;
+      fileWidgetCommand = "rg --files";
+      colors = {
+        spinner = lib.mkForce "#fab387";
+        hl = lib.mkForce "#fab387";
+        header = lib.mkForce "#fab387";
+        info = lib.mkForce "#fab387";
+        pointer = lib.mkForce "#fab387";
+        marker = lib.mkForce "#fab387";
+        prompt = lib.mkForce "#fab387";
+        "hl+" = lib.mkForce "#fab387";
+      };
+    };
 
     zoxide.enable = true;
     carapace.enable = true;
