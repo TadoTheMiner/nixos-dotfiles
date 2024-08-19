@@ -22,7 +22,7 @@ window#waybar {
   color: #cdd6f4;
 }
 #workspaces button.visible {
-  color: #fab387;
+  color: #b4befe;
 }
 #workspaces button.urgent {
   color: #f38ba8;
@@ -32,7 +32,7 @@ window#waybar {
   border-radius: 10px;
   background-color: #11111b;
   color: #cdd6f4;
-  border: 2px solid #fab387;
+  border: 2px solid #b4befe;
   margin-top: 10px;
   margin-right: 5px;
   margin-left: 5px;

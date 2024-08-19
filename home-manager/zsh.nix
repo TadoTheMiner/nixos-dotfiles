@@ -32,14 +32,14 @@
       enable = true;
       fileWidgetCommand = "rg --files";
       colors = {
-        spinner = lib.mkForce "#fab387";
-        hl = lib.mkForce "#fab387";
-        header = lib.mkForce "#fab387";
-        info = lib.mkForce "#fab387";
-        pointer = lib.mkForce "#fab387";
-        marker = lib.mkForce "#fab387";
-        prompt = lib.mkForce "#fab387";
-        "hl+" = lib.mkForce "#fab387";
+        spinner = lib.mkForce "#b4befe";
+        hl = lib.mkForce "#b4befe";
+        header = lib.mkForce "#b4befe";
+        info = lib.mkForce "#b4befe";
+        pointer = lib.mkForce "#b4befe";
+        marker = lib.mkForce "#b4befe";
+        prompt = lib.mkForce "#b4befe";
+        "hl+" = lib.mkForce "#b4befe";
       };
     };
 

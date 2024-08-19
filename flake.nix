@@ -6,7 +6,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     catppuccin-discord = {
-      url = "https://catppuccin.github.io/discord/dist/catppuccin-mocha-peach.theme.css";
+      url = "https://catppuccin.github.io/discord/dist/catppuccin-mocha-lavender.theme.css";
       flake = false;
     };
 
@@ -47,7 +47,7 @@
         ./catppuccin.nix
         {
           nix.settings.experimental-features = ["nix-command" "flakes"];
-          system.stateVersion = "23.11";
+          system.stateVersion = "24.05";
         }
         catppuccin.nixosModules.catppuccin
         home-manager.nixosModules.home-manager

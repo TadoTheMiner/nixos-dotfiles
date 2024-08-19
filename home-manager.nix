@@ -1,6 +1,6 @@
 {config, ...}: {
   home = {
-    stateVersion = "23.11";
+    stateVersion = "24.05";
     file = {
       "${config.xdg.configHome}/wiki-tui" = {
         source = ./configs/wiki-tui;

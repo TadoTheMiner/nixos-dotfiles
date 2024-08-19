@@ -11,7 +11,7 @@
       colors = rec {
         background = "11111bff";
         text = "cdd6f4ff";
-        match = "fab387ff";
+        match = "b4befeff";
         selection = match;
         selection-text = background;
         selection-match = background;

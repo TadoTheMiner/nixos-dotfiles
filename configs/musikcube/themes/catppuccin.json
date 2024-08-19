@@ -11,7 +11,7 @@
       "palette": 229
     },
     "frame_focused": {
-      "hex": "#FAB387",
+      "hex": "#b4befe",
       "palette": 167
     },
     "frame_important": {
@@ -19,11 +19,11 @@
       "palette": 66
     },
     "text_focused": {
-      "hex": "#FAB387",
+      "hex": "#b4befe",
       "palette": 167
     },
     "text_active": {
-      "hex": "#FAB387",
+      "hex": "#b4befe",
       "palette": 142
     },
     "text_disabled": {
@@ -51,15 +51,15 @@
       "palette": 223
     },
     "overlay_border": {
-      "hex": "#FAB387",
+      "hex": "#b4befe",
       "palette": 109
     },
     "overlay_focused_border": {
-      "hex": "#FAB387",
+      "hex": "#b4befe",
       "palette": 167
     },
     "overlay_focused_text": {
-      "hex": "#FAB387",
+      "hex": "#b4befe",
       "palette": 167
     },
     "shortcuts_background": {
@@ -87,7 +87,7 @@
       "palette": 237
     },
     "button_background_active": {
-      "hex": "#FAB387",
+      "hex": "#b4befe",
       "palette": 142
     },
     "button_foreground_active": {
@@ -107,11 +107,11 @@
       "palette": 132
     },
     "footer_foreground": {
-      "hex": "#FAB387",
+      "hex": "#b4befe",
       "palette": 229
     },
     "banner_background": {
-      "hex": "#FAB387",
+      "hex": "#b4befe",
       "palette": 66
     },
     "banner_foreground": {
@@ -127,7 +127,7 @@
       "palette": 214
     },
       "list_header_highlighted_background": {
-      "hex": "#FAB387",
+      "hex": "#b4befe",
       "palette": 214
     },
     "list_header_highlighted_foreground": {
@@ -143,7 +143,7 @@
       "palette": 237
     },
     "list_item_active_background": {
-      "hex": "#FAB387",
+      "hex": "#b4befe",
       "palette": 109
     },
     "list_item_active_foreground": {
@@ -151,7 +151,7 @@
       "palette": 235
     },
     "list_item_active_highlighted_background": {
-      "hex": "#FAB387",
+      "hex": "#b4befe",
       "palette": 66
     },
     "list_item_active_highlighted_foreground": {

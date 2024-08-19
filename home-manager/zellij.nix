@@ -12,7 +12,7 @@
           }
           pane size=1 borderless=true {
               plugin location="file://${zjstatus.packages.${pkgs.system}.default}/bin/zjstatus.wasm" {
-                  format_left   "#[fg=#fab387,bold]{session}"
+                  format_left   "#[fg=#b4befe,bold]{session}"
                   format_center "{tabs}"
                   format_right  "{command_git_branch} {datetime}"
                   format_space  ""
@@ -20,10 +20,10 @@
                   border_enabled  "false"
                   hide_frame_for_single_pane "false"
 
-                  mode_normal  "#[bg=#fab387] "
+                  mode_normal  "#[bg=#b4befe] "
 
                   tab_normal   "#[fg=#6C7086] {name} "
-                  tab_active   "#[fg=#fab387,bold,italic] {name} "
+                  tab_active   "#[fg=#b4befe,bold,italic] {name} "
 
                   command_git_branch_command     "git rev-parse --abbrev-ref HEAD"
                   command_git_branch_format      "#[fg=blue] {stdout} "

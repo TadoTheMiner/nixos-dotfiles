@@ -1,6 +1,6 @@
 {...}: {
   catppuccin = {
     enable = true;
-    accent = "peach";
+    accent = "lavender";
   };
 }
