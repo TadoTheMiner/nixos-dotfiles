@@ -4,6 +4,8 @@
     unciv
     steam-run
     minecraft-server
+    openjdk17
+    openjdk8
   ];
   programs = {
     steam.enable = true;

@@ -4,6 +4,8 @@
   pkgs,
   ...
 }: let
+  statusbar = "${zjstatus.packages.${pkgs.system}.default}/bin/zjstatus.wasm";
+in let
   default-tab-template = ''
     default_tab_template {
           children
@@ -11,10 +13,10 @@
             plugin location="zellij:status-bar"
           }
           pane size=1 borderless=true {
-              plugin location="file://${zjstatus.packages.${pkgs.system}.default}/bin/zjstatus.wasm" {
+              plugin location="file://${statusbar}" {
                   format_left   "#[fg=#b4befe,bold]{session}"
                   format_center "{tabs}"
-                  format_right  "{command_git_branch} {datetime}"
+                  format_right  "{command_git_branch} {datetime} {command_battery}"
                   format_space  ""
 
                   border_enabled  "false"
@@ -26,13 +28,18 @@
                   tab_active   "#[fg=#b4befe,bold,italic] {name} "
 
                   command_git_branch_command     "git rev-parse --abbrev-ref HEAD"
-                  command_git_branch_format      "#[fg=blue] {stdout} "
-                  command_git_branch_interval    "10"
+                  command_git_branch_format      "#[fg=#b4befe] {stdout} "
+                  command_git_branch_interval    "3"
                   command_git_branch_rendermode  "static"
 
-                  datetime        "#[fg=#6C7086] {format} "
+                  command_battery_command "cat /sys/class/power_supply/BAT0/capacity"
+                  command_battery_format "#[fg=#b4befe] {stdout}%"
+                  command_battery_interval "10"
+                  command_battery_rendermode "static"
+
+                  datetime        "#[fg=#b4befe] {format} "
                   datetime_format "%a, %d %b %Y %H:%M"
-                  datetime_timezone "Europe/Berlin"
+                  datetime_timezone "Europe/Bratislava"
             }
         }
     }
@@ -62,7 +69,7 @@ in {
             tab name="zsh"
       }'';
     ".cache/zellij/permissions.kdl" = {
-      text = "\"/nix/store/5hxi3vajjkc5l8hbbaj3p5k6km82s7b4-zjstatus-0.15.0/bin/zjstatus.wasm\" {
+      text = "\"${statusbar}\" {
       RunCommands
       ReadApplicationState
       ChangeApplicationState

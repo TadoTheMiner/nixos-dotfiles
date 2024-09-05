@@ -2,12 +2,19 @@
   environment.systemPackages = with pkgs; [
     ripgrep
     unzip
-    networkmanagerapplet
+    pciutils
     jq
     killall
     file
     usbutils
     picocom
     evtest
+    tldr
+    mdbook
+    mpv
+    htop
+    thefuck
+    (pkgs.writeShellScriptBin "nrb" ''${builtins.readFile ./scripts/update}'')
+    obsidian
   ];
 }

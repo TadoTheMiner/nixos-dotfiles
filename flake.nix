@@ -37,7 +37,6 @@
       modules = [
         ./hardware-configuration.nix
         ./desktop.nix
-        ./packages.nix
         ./programming.nix
         ./utilities.nix
         ./gaming.nix
@@ -46,6 +45,12 @@
         ./system.nix
         ./catppuccin.nix
         {
+          nixpkgs.config = {
+            allowUnfree = true;
+            permittedInsecurePackages = [
+              "electron-25.9.0"
+            ];
+          };
           nix.settings.experimental-features = ["nix-command" "flakes"];
           system.stateVersion = "24.05";
         }

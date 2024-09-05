@@ -1,15 +1,9 @@
-{config, ...}: {
+{...}: {
   home = {
     stateVersion = "24.05";
     file = {
-      "${config.xdg.configHome}/wiki-tui" = {
+      ".config/wiki-tui" = {
         source = ./configs/wiki-tui;
-        recursive = true;
-      };
-      "${config.xdg.configHome}/musikcube/settings.json".source = ./configs/musikcube/settings.json;
-      "${config.xdg.configHome}/musikcube/hotkeys.json".source = ./configs/musikcube/settings.json;
-      "${config.xdg.configHome}/musikcube/themes" = {
-        source = ./configs/musikcube/themes;
         recursive = true;
       };
     };
@@ -25,6 +19,8 @@
     ./home-manager/git.nix
     ./home-manager/gtk.nix
     ./home-manager/helix.nix
+    ./home-manager/music.nix
+    ./home-manager/qt.nix
     ./home-manager/starship.nix
     ./home-manager/sway.nix
     ./home-manager/waybar.nix

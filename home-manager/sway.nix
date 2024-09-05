@@ -1,5 +1,15 @@
-{lib, ...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   imports = [./sway/keybindings.nix];
+  home.packages = with pkgs; [
+    grim
+    slurp
+    wl-clipboard
+    cliphist
+  ];
   wayland.windowManager.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
@@ -7,7 +17,9 @@
       defaultWorkspace = "workspace number 1";
       bars = [{command = "waybar";}];
       output."*".bg = "#1e1e2e solid_color";
-      input."type:keyboard".xkb_layout = "us,sk";
+      input."type:keyboard" = {
+        xkb_layout = "us,sk(qwerty)";
+      };
       startup = [
         # Launch Firefox on start
         {command = ''sh -c "firefox | swaymsg"'';}
@@ -62,8 +74,10 @@
       borderColor = lib.mkForce "#b4befe";
       borderSize = 2;
       borderRadius = 20;
-      width = 600;
+      width = 1000;
+      height = 500;
       font = "Ubuntu 20";
+      defaultTimeout = 10000;
     };
     swayidle = {
       enable = true;
@@ -76,24 +90,16 @@
       ];
     };
   };
-  programs = {
-    wofi = {
-      enable = true;
-      style = "window {
-            background-color: #11111b;
-        }";
-    };
-    swaylock = {
-      enable = true;
-      settings = {
-        font = "Ubuntu";
-        font-size = 24;
-        ring-color = lib.mkForce "b4befe";
-        ring-ver-color = lib.mkForce "b4befe";
-        indicator-idle-visible = false;
-        indicator-radius = 100;
-        show-failed-attempts = true;
-      };
+  programs.swaylock = {
+    enable = true;
+    settings = {
+      font = "Ubuntu";
+      font-size = 24;
+      ring-color = lib.mkForce "b4befe";
+      ring-ver-color = lib.mkForce "b4befe";
+      indicator-idle-visible = false;
+      indicator-radius = 100;
+      show-failed-attempts = true;
     };
   };
 }

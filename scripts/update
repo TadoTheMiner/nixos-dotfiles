@@ -1,0 +1,5 @@
+#!/bin/zsh
+cd ~/nixos
+git add .
+nix flake update
+sudo nixos-rebuild switch

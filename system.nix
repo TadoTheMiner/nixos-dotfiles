@@ -4,11 +4,7 @@
   ...
 }: {
   boot = {
-   initrd.luks.devices."luks-f223570a-d11c-4439-b7bf-834144b782ee".device = "/dev/disk/by-uuid/f223570a-d11c-4439-b7bf-834144b782ee";
-
-    kernelParams = [
-      "quiet" #"vt.default_red=30,243,166,249,137,245,148,186,88,243,166,249,137,245,148,166" "vt.default_grn=30,139,227,226,180,194,226,194,91,139,227,226,180,194,226,173" "vt.default_blu=46,168,161,175,250,231,213,222,112,168,161,175,250,231,213,200"
-    ];
+    initrd.luks.devices."luks-f223570a-d11c-4439-b7bf-834144b782ee".device = "/dev/disk/by-uuid/f223570a-d11c-4439-b7bf-834144b782ee";
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
@@ -19,7 +15,6 @@
     hostName = "nixos";
     networkmanager.enable = true;
   };
-  sound.enable = false;
   users.defaultUserShell = pkgs.zsh;
   programs = {
     ssh.startAgent = true;
@@ -35,6 +30,21 @@
         support32Bit = true;
       };
       pulse.enable = true;
+    };
+
+    greetd = {
+      enable = true;
+      settings = {
+        default_session = {
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --asterisks --time --cmd sway";
+          user = "greeter";
+        };
+
+        initial_session = {
+          command = "sway";
+          user = "tadeas";
+        };
+      };
     };
   };
 

@@ -17,12 +17,14 @@
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [xdg-desktop-portal-wlr xdg-desktop-portal-gtk];
+    config.common.default = "*";
   };
   programs = {
     sway = {
       enable = true;
       wrapperFeatures.gtk = true;
       extraPackages = with pkgs; [
+        libnotify
         swaybg
         libsForQt5.breeze-icons
         grim
@@ -36,33 +38,5 @@
     };
     dconf.enable = true;
     seahorse.enable = true;
-  };
-  services = {
-    greetd = {
-      enable = true;
-      settings = {
-        default_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --asterisks --time --cmd sway";
-          user = "greeter";
-        };
-      };
-    };
-    xserver = {
-      enable = true;
-      excludePackages = with pkgs.xorg; [
-        xorgserver.out
-        xrandr
-        xrdb
-        setxkbmap
-        iceauth
-        xlsclients
-        xset
-        xsetroot
-        xinput
-        xprop
-        xauth
-        pkgs.xterm
-      ];
-    };
   };
 }

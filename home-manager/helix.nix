@@ -1,13 +1,17 @@
 {...}: {
-  programs.helix = {
-    enable = true;
-    ignores = [
-      "Cargo.lock"
-      "flake.lock"
-      "!.gitignore"
-    ];
-    defaultEditor = true;
+  programs = {
+    helix = {
+      enable = true;
+      defaultEditor = true;
+
+      ignores = [
+        "Cargo.lock"
+        "flake.lock"
+        "!.gitignore"
+      ];
+    };
   };
+
   imports = [
     ./helix/settings.nix
     ./helix/keybinds.nix

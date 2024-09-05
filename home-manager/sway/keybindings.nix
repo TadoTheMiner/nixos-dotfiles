@@ -24,7 +24,7 @@ in {
     "Mod4+Shift+c" = "reload";
     "Mod4+Shift+e" = "exit";
     "Mod4+Shift+s" = ''exec sh -c "systemctl suspend; swaylock"'';
-    "Mod4+Shift+i" = ''exec sh -c "systemctl hibernate; swaylock"'';
+    "Mod4+Shift+i" = "exec systemctl hibernate";
     "Mod4+Shift+r" = "exec systemctl reboot";
     #firefox
     "Mod4+1" = "workspace number 1";
