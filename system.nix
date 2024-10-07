@@ -13,13 +13,12 @@
   };
   networking = {
     hostName = "nixos";
-    networkmanager.enable = true;
+    wireless.iwd.enable = true;
   };
-  users.defaultUserShell = pkgs.zsh;
-  programs = {
-    ssh.startAgent = true;
-    zsh.enable = true;
-  };
+
+  users.defaultUserShell = pkgs.nushell;
+  programs.ssh.startAgent = true;
+
   services = {
     power-profiles-daemon.enable = false;
     tlp.enable = true;
@@ -31,7 +30,6 @@
       };
       pulse.enable = true;
     };
-
     greetd = {
       enable = true;
       settings = {
@@ -72,6 +70,5 @@
     }/bin/bing-wallpaper-server 10000 /tmp/image.jpg";
     wantedBy = ["multi-user.target"];
     enable = true;
-    wants = ["network-online.target"];
   };
 }

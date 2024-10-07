@@ -1,5 +1,8 @@
 #!/bin/zsh
 cd ~/nixos
+ssh-add
 git add .
+git commit -m "update"
+git push
 nix flake update
 sudo nixos-rebuild switch

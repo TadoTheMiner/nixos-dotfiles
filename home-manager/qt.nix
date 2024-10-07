@@ -10,8 +10,8 @@
       pkgs.libsForQt5.qt5ct
     ];
     file = {
-      ".config/qt5ct/colors/Catppuccin-Mocha.conf".source = ../configs/Catppuccin-Mocha.conf;
-      ".config/qt6ct/colors/Catppuccin-Mocha.conf".source = ../configs/Catppuccin-Mocha.conf;
+      ".config/qt5ct/".source = ../configs/qt5ct;
+      ".config/qt6ct/".source = ../configs/qt6ct;
     };
   };
 }

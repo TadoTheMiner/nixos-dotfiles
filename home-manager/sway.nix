@@ -20,9 +20,10 @@
       input."type:keyboard" = {
         xkb_layout = "us,sk(qwerty)";
       };
+      assigns."2" = [{class = "discord";}];
       startup = [
-        # Launch Firefox on start
-        {command = ''sh -c "firefox | swaymsg"'';}
+        {command = "firefox";}
+        {command = "discord";}
         {command = "wl-paste --watch cliphist store";}
       ];
       floating = {

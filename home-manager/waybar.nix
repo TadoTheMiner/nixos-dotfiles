@@ -8,15 +8,11 @@
         position = "top";
         output = ["eDP-1"];
         margin-bottom = 10;
-        modules-left = ["sway/workspaces" "group/system_indicators"];
-        "group/system_indicators" = {
-          orientation = "inherit";
-          modules = ["network" "battery" "backlight" "pulseaudio"];
-        };
+        modules-left = ["sway/workspaces" "network" "battery" "backlight" "pulseaudio"];
         modules-center = ["clock"];
         modules-right = ["sway/mode" "sway/language" "custom/waybar-mpris"];
         network = {
-          interface = "wlp0s20f3";
+          interface = "wlan0";
           format-wifi = "<span color='#b4befe'>   {signalStrength}%</span> {essid}";
           format-disconnected = "<span color='#f38ba8'>󰖪 </span>No Network";
           tooltip = false;

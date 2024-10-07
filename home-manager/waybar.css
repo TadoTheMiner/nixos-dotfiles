@@ -28,8 +28,8 @@ window#waybar {
   color: #f38ba8;
 }
 
-#custom-waybar-mpris, #mode, #workspaces, #clock, #language, #system_indicators{
-  border-radius: 10px;
+#custom-waybar-mpris, #mode, #workspaces, #clock, #language, #network, #battery, #backlight, #pulseaudio {
+  border-radius: 8px;
   background-color: #11111b;
   color: #cdd6f4;
   border: 2px solid #b4befe;

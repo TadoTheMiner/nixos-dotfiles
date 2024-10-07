@@ -4,20 +4,19 @@
 
   # Select internationalisation properties.
   i18n = {
-    defaultLocale = "de_CH.UTF-8";
+    defaultLocale = "en_US.UTF-8";
     extraLocaleSettings = {
-      LC_ADDRESS = "de_CH.UTF-8";
-      LC_IDENTIFICATION = "de_CH.UTF-8";
-      LC_MEASUREMENT = "de_CH.UTF-8";
-      LC_MONETARY = "de_CH.UTF-8";
-      LC_NAME = "de_CH.UTF-8";
-      LC_NUMERIC = "de_CH.UTF-8";
-      LC_PAPER = "de_CH.UTF-8";
-      LC_TELEPHONE = "de_CH.UTF-8";
-      LC_TIME = "de_CH.UTF-8";
+      LC_ADDRESS = "sk_SK.UTF-8";
+      LC_IDENTIFICATION = "sk_SK.UTF-8";
+      LC_MEASUREMENT = "sk_SK.UTF-8";
+      LC_MONETARY = "sk_SK.UTF-8";
+      LC_NAME = "sk_SK.UTF-8";
+      LC_NUMERIC = "sk_SK.UTF-8";
+      LC_PAPER = "sk_SK.UTF-8";
+      LC_TELEPHONE = "sk_SK.UTF-8";
+      LC_TIME = "en_US.UTF-8";
     };
-  };
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  }; # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.tadeas = {
     isNormalUser = true;
     description = "Tadeas Uradnik";

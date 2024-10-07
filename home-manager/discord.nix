@@ -14,7 +14,7 @@
         openasar = {
           setup = true;
           cmdPreset = "balanced";
-          css = ".wrapper_fea3ef.guilds_a4d4d9{display: none;} * {font-family: Ubuntu !important;} ${builtins.readFile catppuccin-discord}";
+          css = "${builtins.readFile catppuccin-discord} ${builtins.readFile ./discord.css} *{font-family: Ubuntu !important;}";
         };
         chromiumSwitches = {};
         MINIMIZE_TO_TRAY = false;
@@ -25,6 +25,11 @@
       recursive = true;
       force = true;
     };
-    packages = [pkgs.discord];
+    packages = [
+      (pkgs.discord.override {
+        # remove any overrides that you don't want
+        withOpenASAR = true;
+      })
+    ];
   };
 }

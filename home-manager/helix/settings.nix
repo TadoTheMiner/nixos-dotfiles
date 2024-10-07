@@ -2,18 +2,20 @@
   programs.helix.settings.editor = {
     mouse = false;
     color-modes = true;
-    popup-border = "all";
-    completion-replace = true;
+    shell = ["zsh" "-c"];
+    soft-wrap.enable = true;
+    gutters.line-numbers.min-width = 2;
+    auto-save.after-delay = {
+      enable = true;
+      timeout = 1;
+    };
     statusline = {
       left = [
         "mode"
-        "spinner"
         "file-modification-indicator"
-        "separator"
-        "diagnostics"
       ];
-      center = ["file-base-name"];
-      right = ["position"];
+      center = ["file-name"];
+      right = ["spinner" "diagnostics"];
       mode = {
         normal = "Normal";
         insert = "Insert";

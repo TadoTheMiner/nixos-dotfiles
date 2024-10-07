@@ -7,6 +7,12 @@
         formatter.command = "${pkgs.alejandra}/bin/alejandra";
       }
       {
+        name = "c";
+        auto-format = true;
+        formatter.command = "${pkgs.astyle}/bin/astyle";
+      }
+
+      {
         name = "rust";
         auto-pairs = {
           "(" = ")";
