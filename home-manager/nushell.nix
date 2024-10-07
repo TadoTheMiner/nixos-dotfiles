@@ -4,6 +4,8 @@
       enable = true;
       configFile.source = ./config.nu;
       shellAliases = {
+        l = "eza";
+        ll = "eza -l";
         ln = "ln -s";
         rm = "rm -rI";
         rmf = "rm -rf";
@@ -22,6 +24,14 @@
       };
     };
 
+    eza = {
+      enable = true;
+      enableNushellIntegration = true;
+      icons = true;
+      extraOptions = ["--no-permissions" "--no-user" "-a"];
+    };
+
+    fish.enable = true; # completions
     zoxide.enable = true;
   };
 }
