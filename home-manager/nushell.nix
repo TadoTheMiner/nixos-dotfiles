@@ -2,6 +2,7 @@
   programs = {
     nushell = {
       enable = true;
+      configFile.source = ./config.nu;
       shellAliases = {
         ln = "ln -s";
         rm = "rm -rI";
@@ -16,8 +17,8 @@
         gl = "git pull";
         gf = "git fetch";
         # Nix
-        ndv = "nix develop --command zsh";
-        nsh = "nix-shell --command zsh -p";
+        ndv = "nix develop --command nu";
+        nsh = "nix-shell --command nu -p";
       };
     };
 

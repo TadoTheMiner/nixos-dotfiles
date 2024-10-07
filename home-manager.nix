@@ -5,7 +5,6 @@
     ./home-manager/bat.nix
     ./home-manager/catppuccin.nix
     ./home-manager/discord.nix
-    ./home-manager/eza.nix
     ./home-manager/foot.nix
     ./home-manager/fuzzel.nix
     ./home-manager/git.nix
