@@ -4,13 +4,12 @@
       enable = true;
       dotDir = ".config/zsh";
       history.path = "/dev/null";
-      defaultKeymap = "emacs";
       initExtra = "carapace --style 'carapace.Description=#b4befe'";
       syntaxHighlighting.enable = true;
       shellAliases = {
         # Coreutils
         ln = "ln -s";
-        rm = "trashy put";
+        rm = "trash put";
         cp = "cp -r";
         cd = "z";
         cat = "bat -p";

@@ -9,7 +9,10 @@
       C-A-q = ":qa!";
       C-right = "move_next_word_start";
       C-left = "move_prev_word_end";
+      C-right-del = "delete_word_forward";
+      C-left-del = "delete_word_backward";
     };
+
     select = {
       C-A-q = ":qa!";
       C-right = "extend_next_word_start";

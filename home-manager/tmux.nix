@@ -3,6 +3,6 @@
     enable = true;
     keyMode = "vi";
     terminal = "screen-256color";
-    newSession = true;
+    extraConfig = builtins.readFile ./tmux.conf;
   };
 }
