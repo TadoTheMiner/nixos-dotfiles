@@ -1,6 +1,6 @@
 #!/bin/zsh
 cd ~/nixos
-ssh-add
+add-ssh-key
 git add .
 git commit -m "update"
 git push

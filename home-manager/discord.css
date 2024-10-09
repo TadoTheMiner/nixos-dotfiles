@@ -1,12 +1,12 @@
-.recentsIcon_ea0547, /*inbox icon*/
 [aria-label="Show Member List"], /*possible via keyboard shortcut*/
 .searchBar_f0963d, /*button that just activates quick switcher which is just ctrl k*/
 .separator_a0, /*usseless lines in settings*/
+.divider_a6d69a, /*useless line between forum tags*/
 .divider_fc4f04, /*useless line in dms header*/
 .tagsDivider_c1668f, /*useless line in forum post creation*/
 .channel_c91bad[aria-posinset="2"], /*nitro*/
 .channel_c91bad:not([aria-posinset]), /*shop*/
-.repliedMessageSpine_f9f2ca, /*useless line on replied messages*/
+.repliedMessageClickableSpine_f9f2ca, /*useless line on replied messages*/
 .sectionDivider_c43953, /*useless line*/
 [role=separator], /*useless lines in right click menus*/
 [href="https://support.discord.com"], /*help icon*/
@@ -19,11 +19,8 @@
 
 *, *:before {
   box-shadow: none !important;
+  border-color: transparent !important; 
 } 
-
-.peopleListItem_d51464 {
-   border: none !important;  
-}
 
 .sidebar_a4d4d9 {
   border-radius: 8px !important; 
@@ -33,5 +30,3 @@
 .layer_d4b6c5.baseLayer_d4b6c5 { 
   background-color: var(--background-primary); 
 }
-
-/* .content_a7d72e:before { box-shadow: none; } */

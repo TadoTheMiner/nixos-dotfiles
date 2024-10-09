@@ -16,11 +16,11 @@
         mdr = "mkdir -p";
         # Git
         g = "git";
-        gp = "git push";
-        gl = "git pull";
-        gf = "git fetch";
-        gc = "ssh-add && git add . && cz commit && git push";
-        gcl = "ssh add && git clone";
+        gp = "add-ssh-key && git push";
+        gl = "add-ssh-key && git pull";
+        gf = "add-ssh-key && git fetch";
+        gc = "add-ssh-key && git add . && cz commit && git push";
+        gcl = "add-ssh-key && git clone";
         # Nix
         ndv = "nix develop --command zsh";
         nsh = "nix-shell --command zsh -p";
