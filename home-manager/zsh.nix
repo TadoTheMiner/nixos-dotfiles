@@ -5,7 +5,7 @@
       dotDir = ".config/zsh";
       history.path = "/dev/null";
       defaultKeymap = "emacs";
-      initExtr = "carapace --style 'carapace.Description=#b4befe'";
+      initExtra = "carapace --style 'carapace.Description=#b4befe'";
       syntaxHighlighting.enable = true;
       shellAliases = {
         # Coreutils
