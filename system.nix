@@ -16,9 +16,11 @@
     wireless.iwd.enable = true;
   };
 
-  users.defaultUserShell = pkgs.nushell;
-  programs.ssh.startAgent = true;
-
+  users.defaultUserShell = pkgs.zsh;
+  programs = {
+    ssh.startAgent = true;
+    zsh.enable = true;
+  };
   services = {
     power-profiles-daemon.enable = false;
     tlp.enable = true;

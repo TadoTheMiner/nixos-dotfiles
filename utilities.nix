@@ -19,7 +19,6 @@
     htop
     thefuck
     (pkgs.writeShellScriptBin "nrb" ''${builtins.readFile ./scripts/update}'')
-    (pkgs.writeShellScriptBin "gc" ''${builtins.readFile ./scripts/gc}'')
     obsidian
     unstable.impala
   ];

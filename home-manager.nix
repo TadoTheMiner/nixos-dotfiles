@@ -11,12 +11,12 @@
     ./home-manager/gtk.nix
     ./home-manager/helix.nix
     ./home-manager/music.nix
-    ./home-manager/nushell.nix
     ./home-manager/tmux.nix
     ./home-manager/qt.nix
     ./home-manager/starship.nix
     ./home-manager/sway.nix
     ./home-manager/waybar.nix
     ./home-manager/xdg.nix
+    ./home-manager/zsh.nix
   ];
 }
