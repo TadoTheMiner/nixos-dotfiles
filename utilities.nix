@@ -18,6 +18,7 @@
     mpv
     htop
     thefuck
+    trashy
     (pkgs.writeShellScriptBin "nrb" ''${builtins.readFile ./scripts/update}'')
     obsidian
     unstable.impala

@@ -3,12 +3,14 @@
     zsh = {
       enable = true;
       dotDir = ".config/zsh";
+      history.path = "/dev/null";
+      defaultKeymap = "emacs";
+      initExtr = "carapace --style 'carapace.Description=#b4befe'";
       syntaxHighlighting.enable = true;
       shellAliases = {
         # Coreutils
         ln = "ln -s";
-        rm = "rm -rI";
-        rmf = "rm -rf";
+        rm = "trashy put";
         cp = "cp -r";
         cd = "z";
         cat = "bat -p";
@@ -25,6 +27,7 @@
         nsh = "nix-shell --command zsh -p";
       };
     };
+
     fzf = {
       enable = true;
       fileWidgetCommand = "rg --files";
@@ -39,11 +42,13 @@
         "hl+" = lib.mkForce "#b4befe";
       };
     };
+
     eza = {
       enable = true;
       icons = true;
-      extraOptions = ["--no-permissions" "--no-user" "-a"];
+      extraOptions = ["--no-permissions" "--no-user"];
     };
+
     zoxide.enable = true;
     carapace.enable = true;
   };
