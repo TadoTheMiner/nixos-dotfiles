@@ -3,6 +3,7 @@
     enable = true;
     keyMode = "vi";
     terminal = "screen-256color";
+    extraConfig = ./tmux.conf;
     catppuccin.enable = false;
   };
 }
