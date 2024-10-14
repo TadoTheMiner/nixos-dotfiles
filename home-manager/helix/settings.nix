@@ -18,7 +18,7 @@
         "file-modification-indicator"
       ];
       center = ["file-name"];
-      right = ["spinner" "diagnostics"];
+      right = ["spinner" "diagnostics" "position"];
       mode = {
         normal = "Normal";
         insert = "Insert";
