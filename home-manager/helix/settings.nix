@@ -5,13 +5,7 @@
     shell = ["zsh" "-c"];
     soft-wrap.enable = true;
     gutters.line-numbers.min-width = 2;
-    auto-save = {
-      focus-lost = true;
-      after-delay = {
-        enable = true;
-        timeout = 1;
-      };
-    };
+    auto-save.focus-lost = true;
     statusline = {
       left = [
         "mode"
