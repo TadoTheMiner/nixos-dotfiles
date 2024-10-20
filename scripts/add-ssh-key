@@ -1,2 +1,3 @@
 #!/bin/sh
 [[ $(ssh-add -l) == "The agent has no identities." ]] && ssh-add
+exit 0
