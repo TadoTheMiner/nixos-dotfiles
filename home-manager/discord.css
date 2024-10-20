@@ -38,3 +38,7 @@
 .layer_d4b6c5.baseLayer_d4b6c5 { 
   background-color: var(--background-primary); 
 }
+
+:root {
+  --shadow-ledge: none !important;
+}
