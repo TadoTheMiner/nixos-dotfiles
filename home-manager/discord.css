@@ -1,10 +1,9 @@
 .iconWrapper_fc4f04, /*inbox icon*/
 .divider_fc4f04, /* useless line in channell description*/
-.buttonContainer_f9f2ca, /*message hover menu*/
+.buttonContainer_f9f2ca, /*hover menu*/
 [aria-label="Show Member List"], /*possible via keyboard shortcut*/
 .searchBar_f0963d, /*button that just activates quick switcher which is just ctrl k*/
 .separator_a0, /*usseless lines in settings*/
-.toolbar_fc4f04, /*useless line in dms header*/
 .tagsDivider_c1668f, /*useless line in forum post creation*/
 .channel_c91bad[aria-posinset="2"], /*nitro*/
 .channel_c91bad:not([aria-posinset]), /*shop*/
@@ -20,15 +19,15 @@
 } 
 
 .divider_a6d69a {/*useless line in forum tags*/
-    background-color: transparent !important;
+  background-color: transparent !important;
 }
 
 * {
-    border: none !important;
+  border: none !important;
 } 
 
-.content_a7d72e:before, .container_b385c8, .chat_f57fdc:before {
- box-shadow: none !important;
+*:before {
+  box-shadow: none !important;
 }
 
 .sidebar_a4d4d9 {
